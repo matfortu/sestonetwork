@@ -11,9 +11,9 @@
 .grid-container {
 	display: grid;
 	width: 100vw;
-	grid-template-columns: 10% auto 10%;
+	grid-template-columns: 17% auto 17%;
 	grid-template-rows: 1em auto auto 20em auto 1em;
-	grid-template-areas: ". . ." ". logo ." "player player player" "rosso chat rosso2" ". input ." ". footer .";
+	grid-template-areas: ". . ." ". logo ." "player player player" "rosso chat rosso2" "rosso input rosso2" ". footer .";
 }
 
 .logo { 
@@ -69,6 +69,7 @@ li {
 	list-style: none;
 	font-family: 'Roboto';
 	font-weight: 400; 
+	padding-left: 3em;
 }
 
 .input {
