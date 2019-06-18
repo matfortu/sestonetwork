@@ -1,0 +1,63 @@
+.grid-container {
+	display: grid;
+	grid-template-columns: 10% auto 10%;
+	grid-template-rows: 1em auto auto 20em auto 1em;
+	grid-template-areas: ". . ." ". logo ." "player player player" ". chat ." ". input ." ". footer .";
+}
+
+.logo { 
+	grid-area: logo;
+	margin: auto;
+}
+
+.box {
+	max-height: 33%;
+}
+
+.chat {
+	min-height: 300px;
+	grid-area: chat;
+	overflow: auto;
+	border: 2px solid red;
+}
+
+.player { 
+	grid-area: player;
+	margin: auto;
+}
+
+.footer { 
+	grid-area: footer;
+}
+
+.responsive {
+	width: 100%;
+	height: auto;
+	max-width: 300px;
+}
+
+.center {
+	text-align: center;
+}
+
+li {
+	list-style: none;
+	font-family: 'Roboto';
+	font-weight: 400; 
+}
+
+.input {
+	grid-area: input;
+	margin: auto;
+	padding-top: 1em;
+}
+
+.museo {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+.server {
+	color :red;
+	font-weight: bold;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+	<title>SestoNetwork</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="static/style.css">
+	<style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');</style>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="static/chat.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+		<div class="player center">
+			<audio controls="true" preload="none">
+				<source src="http://matfortu.zapto.org:3012//;stream.mp3" type="audio/mp3">
+					Your browser does not support the audio element.
+			</audio>
+			<p class="center museo"><h1>Chatta con noi in diretta!</h1></p>
+		</div>
+		<div class="logo">
+	        <p><img class="responsive" src="static/logo.png"></p>
+	    </div>
+	    <div class="chat">
+	    	<nav id="box">
+	    		<ul id="chat"></ul>
+	    	</nav>
+	    </div>
+	    <div class="input">
+    		<form id="mess" action="">
+      			<input id="messaggio" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /><button id="invia">Invia</button><br>
+    		</form>
+    	</div>
+		<div class="footer center">
+			<p class="center">© 2015-2019 SestoNetwork - licenza SIAE n. 5630/I/5368 - licenza SCF n. 269/17</p>
+		</div>
+	</div>
+</body>
+</html>
