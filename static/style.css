@@ -1,8 +1,19 @@
+/**
+ * BLACK: #2e2925
+ * RED:   #ec0928
+ */
+*{
+ 	box-sizing: border-box;
+  	padding: 0;
+  	margin: 0;
+}
+
 .grid-container {
 	display: grid;
+	width: 100vw;
 	grid-template-columns: 10% auto 10%;
 	grid-template-rows: 1em auto auto 20em auto 1em;
-	grid-template-areas: ". . ." ". logo ." "player player player" ". chat ." ". input ." ". footer .";
+	grid-template-areas: ". . ." ". logo ." "player player player" "rosso chat rosso2" ". input ." ". footer .";
 }
 
 .logo { 
@@ -10,24 +21,38 @@
 	margin: auto;
 }
 
+.rosso { 
+	grid-area: rosso;
+	background: #ec0928;
+}
+
+.rosso2 { 
+	grid-area: rosso2;
+	background: #ec0928;
+}
+
 .box {
 	max-height: 33%;
+	max-width: 50%;
+	background: red;
+	padding: 1em;
 }
 
 .chat {
 	min-height: 300px;
 	grid-area: chat;
 	overflow: auto;
-	border: 2px solid red;
 }
 
 .player { 
 	grid-area: player;
 	margin: auto;
+	padding-top: 2em;
 }
 
 .footer { 
 	grid-area: footer;
+	padding-top: 3em;
 }
 
 .responsive {
@@ -52,12 +77,17 @@ li {
 	padding-top: 1em;
 }
 
+#messaggio {
+	width: 40em;
+	max-width: 18em;
+}
+
 .museo {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 }
 
 .server {
-	color :red;
+	color: #ec0928;
 	font-weight: bold;
 }

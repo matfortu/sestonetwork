@@ -3,8 +3,11 @@
 <head>
 	<title>SestoNetwork</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="static/style.css">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 	<style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');</style>
+	<script src="https://kit.fontawesome.com/01cf33f866.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="static/chat.js"></script>
@@ -13,7 +16,7 @@
     <div class="grid-container">
 		<div class="player center">
 			<audio controls="true" preload="none">
-				<source src="http://matfortu.zapto.org:3012//;stream.mp3" type="audio/mp3">
+				<source src="http://sestonetwork.cloud:3012//;stream.mp3" type="audio/mp3">
 					Your browser does not support the audio element.
 			</audio>
 			<p class="center museo"><h1>Chatta con noi in diretta!</h1></p>
@@ -21,14 +24,16 @@
 		<div class="logo">
 	        <p><img class="responsive" src="static/logo.png"></p>
 	    </div>
+	    <div class="rosso"></div>
 	    <div class="chat">
 	    	<nav id="box">
 	    		<ul id="chat"></ul>
 	    	</nav>
 	    </div>
+	    <div class="rosso2"></div>
 	    <div class="input">
-    		<form id="mess" action="">
-      			<input id="messaggio" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /><button id="invia">Invia</button><br>
+    		<form id="mess" class="pure-form" action="">
+      			<input id="messaggio" class="pure-form" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /> <button class="pure-button" id="invia"><i class="far fa-paper-plane"></i>  Invia</button><br>
     		</form>
     	</div>
 		<div class="footer center">
