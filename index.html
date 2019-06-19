@@ -3,42 +3,74 @@
 <head>
 	<title>SestoNetwork</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="static/style.css">
-	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-	<style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');</style>
-	<script src="https://kit.fontawesome.com/01cf33f866.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-	<script src="static/chat.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <div class="grid-container">
-		<div class="player center">
-			<audio controls="true" preload="none">
-				<source src="http://sestonetwork.cloud:3012//;stream.mp3" type="audio/mp3">
-					Your browser does not support the audio element.
-			</audio>
-			<p class="center museo"><h1>Chatta con noi in diretta!</h1></p>
-		</div>
-		<div class="logo">
-	        <p><img class="responsive" src="static/logo.png"></p>
-	    </div>
-	    <div class="rosso"></div>
-	    <div class="chat">
-	    	<nav id="box">
-	    		<ul id="chat"></ul>
-	    	</nav>
-	    </div>
-	    <div class="rosso2"></div>
-	    <div class="input">
-    		<form id="mess" class="pure-form" action="">
-      			<input id="messaggio" class="pure-form" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /> <button class="pure-button" id="invia"><i class="far fa-paper-plane"></i>  Invia</button><br>
-    		</form>
-    	</div>
-		<div class="footer center">
-			<p class="center">© 2015-2019 SestoNetwork - licenza SIAE n. 5630/I/5368 - licenza SCF n. 269/17</p>
+
+    <div class="row" style="margin-top: 3%;">
+    	<div class="col">
+	    	<div class="logo text-center">
+		        <img class="img-fluid" style="max-width: 50%;" alt="Responsive image" src="static/logo.png">
+		    </div>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col text-center">
+			<audio controls preload="none" style="margin-top: 5%;">
+				<source src="http://sestonetwork.cloud:3012//;stream.mp3" type="audio/mp3"> Your browser does not support the audio element.
+			</audio>
+		</div>
+	</div>
+
+	<div class="container collapse show" id="formunisciti" style="margin-top: 3%;">
+		<form id="username" class="form-inline justify-content-center" onsubmit="return(false);">
+			<div class="form-row">
+				<div class="col">
+	      			<input class="form-control form-control-lg" role="button" id="user" autocomplete="off" type="text" required placeholder="Username..."/>
+	      		</div>
+	      		<div class="col">
+	      			<a tabindex="0" class="btn btn-lg btn-danger" id="unisciti" role="button" data-toggle="popover" data-trigger="focus" title="Username non valido" data-content="Hai scelto uno username già occupato o non valido, riprova.">Unisciti alla Chat</a>
+	      		</div>
+	      	</div>
+	    </form>
+	</div>
+
+	<div class="chat collapse" id="chatbox" style="margin-top: 3%;">
+	    <div class="container">
+		   	<div class="jumbotron row justify-content-center">
+			   	<div class="col-10">
+			   		<nav id="box" style="position: relative; overflow-y: scroll; height: 15rem;">
+				    	<h3>Benvenuto/a nella Chat di SestoNetwork!</h3>
+				    	<ul id="chat" class="list-unstyled"></ul>
+				    </nav>
+			    	<form id="mess">
+			    		<div class="form-row">
+			      			<div class="col-10">
+			      				<input id="messaggio" class="form-control" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /> 
+			      			</div>
+			      			<div class="col-2">
+			      				<button class="btn btn-danger" id="invia">Invia</button>
+			      			</div>
+			    		</div>
+			    	</form>
+		    	</div>
+		    </div>
+	    </div>
+	</div>
+	    
+	<footer class="footer center">
+		<div class="footer-copyright text-center py-3" style="margin-top:3%;">
+			© 2015-2019 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17
+  		</div>
+	</footer>
+
+	<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="static/chat.js"></script>
 </body>
 </html>
