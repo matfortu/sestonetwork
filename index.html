@@ -1,76 +1,403 @@
 <!DOCTYPE html>
-<html lang="it-IT">
+<html>
+
 <head>
-	<title>SestoNetwork</title>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SestoNetwork</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/static/style.css">
 </head>
-<body>
 
-    <div class="row" style="margin-top: 3%;">
-    	<div class="col">
-	    	<div class="logo text-center">
-		        <img class="img-fluid" style="max-width: 50%;" alt="Responsive image" src="static/logo.png">
-		    </div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col text-center">
-			<audio controls preload="none" style="margin-top: 5%;">
-				<source src="http://sestonetwork.cloud:3012//;stream.mp3" type="audio/mp3"> Your browser does not support the audio element.
-			</audio>
-		</div>
-	</div>
-
-	<div class="container collapse show" id="formunisciti" style="margin-top: 3%;">
-		<form id="username" class="form-inline justify-content-center" onsubmit="return(false);">
-			<div class="form-row">
-				<div class="col">
-	      			<input class="form-control form-control-lg" role="button" id="user" autocomplete="off" type="text" required placeholder="Username..."/>
-	      		</div>
-	      		<div class="col">
-	      			<a tabindex="0" class="btn btn-lg btn-danger" id="unisciti" role="button" data-toggle="popover" data-trigger="focus" title="Username non valido" data-content="Hai scelto uno username già occupato o non valido, riprova.">Unisciti alla Chat</a>
-	      		</div>
-	      	</div>
-	    </form>
-	</div>
-
-	<div class="chat collapse" id="chatbox" style="margin-top: 3%;">
-	    <div class="container">
-		   	<div class="jumbotron row justify-content-center">
-			   	<div class="col-10">
-			   		<nav id="box" style="position: relative; overflow-y: scroll; height: 15rem;">
-				    	<h3>Benvenuto/a nella Chat di SestoNetwork!</h3>
-				    	<ul id="chat" class="list-unstyled"></ul>
-				    </nav>
-			    	<form id="mess">
-			    		<div class="form-row">
-			      			<div class="col-10">
-			      				<input id="messaggio" class="form-control" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /> 
-			      			</div>
-			      			<div class="col-2">
-			      				<button class="btn btn-danger" id="invia">Invia</button>
-			      			</div>
-			    		</div>
-			    	</form>
-		    	</div>
-		    </div>
-	    </div>
-	</div>
-	    
-	<footer class="footer center">
-		<div class="footer-copyright text-center py-3" style="margin-top:3%;">
-			© 2015-2019 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17
-  		</div>
-	</footer>
-
-	<!-- JavaScript -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="/socket.io/socket.io.js"></script>
-	<script src="static/chat.js"></script>
+<body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" src="assets/img/static/logo.png" style="margin: 0px;margin-top: 30px;max-width: 20%;">
+    <div class="container" id="menu" style="margin-top: 4%;max-width: 100%;width: 790px;">
+        <div class="row" id="menu">
+            <div class="col" style="font-family: Amiko, sans-serif;">
+                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button">CHAT</span></div>
+                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-4" href="#collapse-4" role="button">PALINSESTO</span></div>
+            </div>
+            <div class="col" style="font-family: Amiko, sans-serif;">
+                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-1" role="button">CHI SIAMO</span></div>
+                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-2" href="#collapse-2" role="button">CONTATTI</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 750px;">
+        <div id="divVideo" class="collapse"><div class="embed-responsive embed-responsive-16by9" id="playerVideo">
+    <iframe class="embed-responsive-item" 
+            src="https://player.twitch.tv/?channel=sestonetwork&muted=true"
+            height="720"
+            width="1280"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen="true">>
+        </iframe>
+</div></div>
+    </div>
+    <div class="container" id="contenuto" style="max-width: 750px;">
+        <div id="collapse-1" class="collapse" style="max-width: auto;" data-parent="#contenuto">
+            <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Chi Siamo</h1>
+            <hr class="linea" style="margin-top: 0px;">
+            <p style="font-family: Amiko, sans-serif;font-size: 1.1em;">SestoNetwork è la nuova webradio di Sesto San Giovanni (la prima della città), nata dall’esigenza di dare nuova forma alle passioni e alle attitudini di ragazzi e ragazze della città, coadiuvati dal prezioso lavoro dell’Informagiovani del
+                Comune di Sesto San Giovanni.<br>SestoNetwork nasce rete, quindi pronta ad accogliere e desiderosa di allargarsi, è voglia di fare, quindi concreta, è passione, quindi instancabile, ma soprattutto vuole essere amplificatore culturale e
+                riferimento informativo e comunicativo all’interno della città.<br><br></p>
+        </div>
+        <div id="collapse-3" class="collapse" style="background-color: #e8e8e8;" data-parent="#contenuto">
+            <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Chat</h1>
+            <hr class="linea" style="margin-top: 0px;"><div class="collapse show" id="formunisciti">
+			    <form id="username" class="form-inline justify-content-center" onsubmit="return(false);">
+			        <div class="form-row">
+			            <div class="col text-center" style="font-family: Amiko, sans-serif;">
+			                <input type="text" id="user" class="form-control" placeholder="Username..." style="font-family: Amiko, sans-serif;max-width: 250px;min-width: 150px;" autocomplete="off" required role="button"/>
+			            </div>
+			            <div class="col">
+			                <span tabindex="0" class="round-btn-red" id="unisciti" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Username non valido" data-content="Hai scelto uno username già occupato o non valido, riprova.">LOGIN</span>
+			            </div>
+			        </div>
+			    </form>
+			</div>
+			<div class="chat collapse margine" id="chatbox">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-10">
+							<div id="box">
+								<h3>Benvenuto/a nella Chat di SestoNetwork!</h3>
+								<div id="chat">
+			                    </div>
+							</div>
+							<form id="mess">
+							    <div class="form-row margine">
+							        <div class="col-10">
+									    <input id="messaggio" class="form-control" autocomplete="off" type="text" required placeholder="Scrivi un messaggio..." /> 
+								    </div>
+								    <div class="col-2">
+									    <button class="btn btn-danger" id="invia">Invia</button>
+								    </div>
+							    </div>
+					        </form>
+					    </div>
+				    </div>
+			    </div>
+			</div></div>
+        <div id="collapse-4" class="collapse" style="max-width: auto;" data-parent="#contenuto">
+            <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Palinsesto</h1>
+            <hr class="linea" style="margin-top: 0px;margin-bottom: -8px;">
+            <ol class="breadcrumb justify-content-center" style="font-family: Amiko, sans-serif;font-size: 11px;margin-bottom: 0px;background-color: transparent;">
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-1" data-slide-to="0">Lunedì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-1" data-slide-to="1">Martedì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-1" data-slide-to="2">Mercoledì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-1" data-slide-to="3">Giovedì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-1" data-slide-to="4">Venerdì</span></a></li>
+            </ol>
+            <div class="carousel slide" data-ride="carousel" data-interval="false" id="carousel-1">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" id="lunedi">
+                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Lunedì</h3>
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-bottom: 10px;padding-top: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>19:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;font-style: normal;" data-toggle="modal" data-target="#profs">Prof's Strange Bag</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Luca Strano</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span><strong>20:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#fracasso">Fracasso GeniAle</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><br>Francesco, Alessandra, Federica, Leonardo &amp; Antonio<br><br></span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span><strong>22:30</strong></span></div>
+                            <div class="col align-self-center" style="font-family: Amiko, sans-serif;"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#siesta">La Siesta di Notte</span></div>
+                            <div class="col align-self-center" style="font-family: Amiko, sans-serif;"><span>Il Collegio</span></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="martedi">
+                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Martedì</h3>
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>10:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#vanessa">Buongiorno Vanessa</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Vanessa</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="margin-top: 3%;font-family: Amiko, sans-serif;margin-bottom: 3%;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:00 (ogni due settimane)</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#rainbow">Rainbow Talking</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><br>GayMin Out - LGBT Nord Milano<br><br></span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:00 (ogni due settimane)</strong></span></div>
+                            <div class="col align-self-center" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#clublibro"><span class="programma" style="font-family: Amiko, sans-serif;">Club del Libro</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Nikita &amp; Antonia</span></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" id="mercoledi">
+                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Mercoledì</h3>
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>18:30</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#talknshoot">Talk'n'Shoot</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Lorenzo</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>20:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#schiappe">Diario delle Schiappe</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Paolo, Margherita, Riccardo, Giulia &amp; Fra</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:15</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#tbg">Il Salotto del TBG</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Marco &amp; Andrea</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>22:30 (una volta al mese)</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#poetilici">Notturno Poetilico</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Jack, Marco, Zoe, Adriano &amp; Marina</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                    </div>
+                    <div class="carousel-item" id="giovedi">
+                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Giovedì</h3>
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>19:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#karesansui">Karesansui</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Stefano Gelati</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#arthropoda">Radiofonica Live Museum</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">William &amp; Ilaria</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                    </div>
+                    <div class="carousel-item" id="venerdi">
+                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Venerdì</h3>
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>19:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#mazzate">Mazzate... e basta!</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Maurizio Mazza</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>20:00</strong></span></div>
+                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#science">Science Shots</span></div>
+                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Jacopo &amp; Ilaria</span></div>
+                        </div>
+                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                    </div>
+                </div>
+                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button"
+                        data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+            </div>
+        </div>
+        <div id="collapse-2" class="collapse" style="max-width: auto;" data-parent="#contenuto">
+            <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Contatti</h1>
+            <hr class="linea" style="margin-top: 0px;">
+            <p style="font-family: Amiko, sans-serif;font-size: 1.1em;">Puoi contattarci su&nbsp;<a href="https://www.facebook.com/SestoNetwork/">Facebook</a>, seguirci su <a href="https://www.instagram.com/sestonetwork/">Instagram</a>&nbsp;o&nbsp;puoi inviarci un’<a href="mailto:info@sestonetwork.it">email</a>.
+                Siamo sempre alla ricerca di persone che hanno voglia di partecipare al nostro progetto, artisti che vogliono condividere la propria musica e organizzatori di eventi che cercano media partner.<br></p>
+        </div>
+    </div>
+    <div class="container" style="width: 630px;max-width: 100%;margin-top: 2%;">
+        <p style="font-family: Amiko, sans-serif;max-width: 100%;"><strong>Stai ascoltando:</strong></p>
+        <p id="live" class="text-muted" style="font-family: Amiko, sans-serif;"></p>
+        <p id="titolo" class="text-muted" style="font-family: Amiko, sans-serif;">ROTAZIONE MUSICALE</p>
+    </div>
+    <div class="container" style="width: 600px;max-width: 100%;"><audio id="audio"><source src="http://sestonetwork.cloud:3012//;stream.mp3" type="audio/mpeg"></audio><i class="fa fa-video-camera" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i><i id="playpausa" class="fa fa-play-circle" style="font-size: 70px;padding-right: 15px;padding-left: 15px;padding-bottom: 15px;" onclick="playPausa();"></i><i onclick="condividi();" class="fa fa-share-alt" id="share" style="font-size: 45px;padding-left: 15px;"></i></div>
+    <div class="modal fade"
+        role="dialog" tabindex="-1" id="profs">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Prof's Strange Bag</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/prof.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;"><br />Dalla valigia del professore escono brani e curiosità dal mondo musicale e metropolitano... sempre in partenza dal binario 6<br /><br /></p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="fracasso">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Fracasso GeniAle</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/fracasso.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Fracasso Geniale va in onda una volta alla settimana, precisamente il lunedì dalle 20:00 alle 21:30. Si discute, a partire da un tema predefinito (ogni volta diverso), per cogliere qualsiasi sfumatura - se possibile anche di più - associata alla variegata esperienza di essere genitore. Fracasso GeniAle è sensibile al tema Ambiente (da qui è stato coniato e lanciato il virale slogan "PLASTIC ONE...PLASTIC TWO...PLASTIC FREE"). Non mancano le rubriche fisse: "Le pulci di Antonio" vede, con gli occhi del nostro entomologo, il mondo genitoriale. È imminente il lancio di un'ulteriore rubrica fissa di astrologia.</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="siesta">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">La Siesta di Notte</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/siesta.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Il collegio di notte dorme, ma un gruppetto di alunni è in fuga... e fa danni!</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="vanessa">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Buongiorno Vanessa - La Sveglia Rosa del Martedì</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/vanessa.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">TBD</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="rainbow">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Rainbow Talking</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/rainbow.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Rainbow Talking è la trasmissione in collaborazione con l’associazione GayMin Out - LGBT Nord Milano. In ogni puntata racconteremo storie, eventi, news legate alla comunità LGBTQIA+ per offrire spunti di riflessione sulla questione dei Diritti Civili in Italia e nel mondo.</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="clublibro">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Club del Libro</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/clublibro.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Leggi libri come se da ciò dipendesse la tua vita? Se la risposta è si, noi siamo qui per condividere questa passione con te! Con incursioni nel mondo del cinema e dei fumetti...</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="talknshoot">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Talk'n'Shoot</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/talknshoot.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Talk'n'Shoot è un programma radiofonico condotto da Lorenzo Infanti. La trasmissione tratta di argomenti cinematografici, fumettistici, ludici e di tematiche legate alla cultura pop. L'obiettivo principale del progetto è quello di sviluppare un dibattito culturale costruttivo e stimolante, cercando di coinvolgere le varie realtà di Sesto.</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="schiappe">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Diario delle Schiappe</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/schiappe.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">I ragazzi del diario da anni raccontano la loro quotidianità. Paolo ha iniziato 4 anni fa e man mano si sono aggiunti conduttori, oggi il diario delle schiappe vanta ben cinque conduttori, Margherita, Riccardo, Giulia e Fra. Tutti i mercoledì si raccontano. Sempre pronti a dire la loro.</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="tbg">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Il Salotto del TBG</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/tbg.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Il salotto del TBG è, come dice la parola stessa, una chiacchierata fra amici. Un salotto radiofonico ed a tratti surreale, nel quale Marco e Andrea di <a href="https://www.youtube.com/channel/UCbQpyC195Z_roSCkLenf5NQ">Total Board Game</a>  portano in onda un po' del mondo dei boardgames, spesso accompagnati da diversi ospiti a sorpresa pescati dagli eventi del vicino Punto Zero. Questo, unito ad una forte ironia e una grande dose di sana improvvisazione, permette ad ogni puntata di partire da giochi da tavolo e da tematiche specifiche, per poi evolversi fino a prendere pieghe inaspettate ed imprevedibili. Si arrivano a toccare così gli argomenti più disparati e spesso molto lontani da quelli di partenza, grazie anche ai vari interessi del duo. Insomma sono tutte chiacchiere... ma in senso positivo!</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="poetilici">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Notturno Poetilico</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/notturno.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Cinque poeti a lume di candela, alle prese con le loro libere associazioni. Attorno a un oggetto freudiano: la Notte, innanzi tutto. E poi unicorni, tapparelle, trappole, astronavi... Una trasmissione che è anche un esperimento sociale.</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="karesansui">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Karesansui</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/karesansui.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">In questa società che ha fatto dell’indifferenza un metodo, e dell’ignoranza una virtù, c’è uno spazio di cultura indipendente, armoniosa, emozionante. Uno spazio antropologico, storico, geografico, per chi di voi desidera informazione senza dimenticare musica e poesia.<br><br>I Podcast delle puntate precedenti sono disponibili all’indirizzo: <a href="https://karesansuiart.wordpress.com/podcasts" target="_blank">karesansuiart.wordpress.com/podcasts</a></p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="arthropoda">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Radiofonica Live Museum - Rubrica Arthropoda</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/arthropoda.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Il nuovo programma condotto dal Team dell’Arthropoda Live Museum! – Radiofonica Live Museum Vi presenterà tutto ciò che non avreste mai potuto immaginare dal mondo naturale e molto di più! Attualità, scienza ed una buona dose di organismi viventi sono gli ingredienti del nostro nuovo imperdibile programma radiofonico, per imparare e stupirci insieme dinanzi alla maestosità della natura… <br>Ad ogni puntata viene descritto un animale particolare e poco conosciuto od affrontata una tematica di attualità riguardante la scienza, per sensibilizzare la cittadinanza ad una corretta gestione delle risorse naturali e fornire un tipo di informazione corretta e dettagliata ma mai noiosa circa le notizie più diffuse su social network, notiziari o mass media…</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="mazzate">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Mazzate... e basta!</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/mazzate.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Il mondo è a misura del Mazza, una conduzione vulcanica in cui Sesto è al centro di un mondo in costante fibrillazione!</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="science">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="font-family: Amiko, sans-serif;">
+                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Science Shots</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/science.jpg" /></div><div class="col-md-7 align-self-center">
+    <p style="font-family: Amiko, sans-serif;">Science shots, ovvero "frammenti di scienza", tocca le materie scientifiche più note e conosciute: fisica, biologia e genetica. Divulgazione ed informazione sulle scoperte e ricerche innovative degli ultimi anni. Un buon modo per scoprire, pensare ed curiosare nella scienza in maniera facile e divertente! In onda ogni due settimane</p>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div><footer style="font-family: Amiko, sans-serif; font-size: 12px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer><script src="/socket.io/socket.io.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script src="assets/js/static/chat.js"></script>
+    <script src="assets/js/static/player.js"></script>
+    <script src="assets/js/static/utils.js"></script>
 </body>
+
 </html>

@@ -1,19 +1,41 @@
-var express = require('express');
-var app = express();
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
+const titolo = require('http');
+const io = require('socket.io')(http);
 var utenti = [];
+const opzioni = {
+  host: 'www.sestonetwork.cloud',
+  port: 3012,
+  path: '/currentsong'
+};
+var song = "";
 
+app.get('/titolo', function (req, res) {
+	res.send(song);
+});
 
-app.use('/static', express.static(__dirname +'/static'));
+app.use('/assets', express.static(__dirname +'/assets'));
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/index.html');
 });
 
+app.get('*', function(req, res){
+	res.status(404).sendFile(__dirname + '/notfound.html');
+});
+
 io.on('connection', function(socket) {
 	console.log('un utente si è connesso');
-	//socket.username = "anon";
+
+	socket.on('update_title', function(){
+		titolo.get(opzioni, function(res) {
+  			song = "";
+			res.on("data", function (chunk) {
+        		song += chunk;
+    		});
+		});
+	});
 
 	socket.on('set_username', (data) => {
 		socket.username = data.username;
@@ -30,7 +52,6 @@ io.on('connection', function(socket) {
 				socket.emit('libero');
 			}
 		}
-		else socket.emit('occupato');
 	});
 
 	socket.on('disconnect', function(){
@@ -44,7 +65,7 @@ io.on('connection', function(socket) {
 
 	socket.on('messaggio', function(msg) {
 		console.log(socket.username + ' : ' + msg);
-		io.emit('messaggio', socket.username + ' : ' + msg);
+		io.emit('messaggio', socket.username, msg);
 	});
 });
 

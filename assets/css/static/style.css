@@ -1,0 +1,175 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+i:hover {
+  color: #D33344;
+  transition: all 0.2s ease-in;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #D33344;
+}
+
+a {
+  color: #cb0a25;
+}
+
+a:hover {
+  color: #D33344;
+}
+
+@media only screen and (max-width: 730px) {
+  #logo {
+    max-width: 55%!important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #menu {
+    margin-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bubble {
+    max-width: 20em!important;
+  }
+}
+
+.colleg {
+  color: #D33344;
+}
+
+#box {
+  position: relative;
+  overflow-y: scroll;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.margine {
+  margin-top: 3%;
+}
+
+.paragrafo {
+  margin-left: 1em;
+  margin-top: 3%;
+  font-size: 1.2rem;
+}
+
+.palinsesto {
+  overflow-x: scroll;
+}
+
+#logo {
+  max-width: 30%;
+}
+
+#playpausa {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.bubble {
+  max-width: 30em;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.io {
+  background-color: #EF7F80;
+  float: right;
+  width: auto;
+}
+
+.altri {
+  float: left;
+  width: auto;
+}
+
+.nomeutente {
+  color: #D33344;
+  font-weight: bold;
+}
+
+.orario {
+  font-weight: bold;
+}
+
+.round-btn {
+  box-shadow: 5px 5px 7px -1px #b3b3b3;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+  color: #4d4b4d;
+  font-family: Amiko, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 40px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
+  /*margin: 8px;*/
+  width: 100%;
+}
+
+.round-btn-red {
+  box-shadow: 5px 5px 7px -1px #b3b3b3;
+  background-color: #d33344;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Amiko, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 40px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #323232;
+  /*margin: 8px;*/
+  width: 100%;
+}
+
+.round-btn:hover {
+  background-color: #e1e1e1;
+}
+
+.round-btn-red:hover {
+  background-color: #cb0a25;
+}
+
+.round-btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.round-btn-red:active {
+  position: relative;
+  top: 1px;
+}
+
+.linea {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.programma {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.programma:hover {
+  font-size: 18px;
+  transition: ease .2s;
+  color: #d33344;
+}
+
