@@ -2,6 +2,7 @@ var day = new Date();
 var days = ["#lunedi", "#lunedi", "#martedi", "#mercoledi", "#giovedi", "#venerdi", "#lunedi"];
 var time = day.getHours().toString().padStart(2, '0') + day.getMinutes().toString().padStart(2, '0');
 var inonda = "Rotazione Musicale";
+var updateInOnda = setInterval(inOnda, 300000);
 
 $( document ).ready(function() {
     inOnda();
@@ -106,3 +107,4 @@ function inOnda(){
 
     $( live ).text(inonda);
 };
+
