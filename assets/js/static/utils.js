@@ -32,9 +32,6 @@ function condividi(){
 function inOnda(){
     switch(day.getDay()) {
         case 0:
-            if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
             break;
         case 1:
         	if(time >= 0000 && time <= 0100) {
@@ -52,7 +49,7 @@ function inOnda(){
             break;
         case 2:
         	if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
+                inonda = "Rotazione Musicale";
             }
             else if(time >= 1000 && time < 1100) {
                 inonda = "Buongiorno Vanessa";
@@ -60,7 +57,7 @@ function inOnda(){
             break;
         case 3:
             if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
+                inonda = "Rotazione Musicale";
             }
             else if(time >= 1830 && time <= 1930) {
                 inonda = "Talk'n'Shoot";
@@ -74,7 +71,7 @@ function inOnda(){
             break;
         case 4:
         	if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
+                inonda = "Rotazione Musicale";
             }
             else if(time >= 1900 && time <= 2000) {
                 inonda = "Karesansui";
@@ -99,7 +96,7 @@ function inOnda(){
             break;
         case 6:
             if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
+                inonda = "Rotazione Musicale";
             }
             break;
     }
