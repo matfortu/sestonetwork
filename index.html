@@ -34,16 +34,12 @@
         </div>
     </div>
     <div class="container" style="max-width: 750px;">
-        <div id="divVideo" class="collapse"><div class="embed-responsive embed-responsive-16by9" id="playerVideo">
-    <iframe class="embed-responsive-item" 
-            src="https://player.twitch.tv/?channel=sestonetwork&muted=true"
-            height="720"
-            width="1280"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen="true">>
-        </iframe>
-</div></div>
+        <div id="divVideo" class="collapse">
+        	<div class="embed-responsive embed-responsive-16by9" id="playerVideo">
+		    	<div id="twitch"></div>
+				</script>
+			</div>
+		</div>
     </div>
     <div class="container" id="contenuto" style="max-width: 750px;">
         <div id="collapse-1" class="collapse" style="max-width: auto;" data-parent="#contenuto">
@@ -434,11 +430,13 @@
                 </div>
             </div>
         </div>
-    </div><footer style="font-family: Amiko, sans-serif; font-size: 12px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer><script src="/socket.io/socket.io.js"></script>
+    </div>
+    <footer style="font-family: Amiko, sans-serif; font-size: 12px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+	<script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script src="assets/js/static/chat.js"></script>
     <script src="assets/js/static/player.js"></script>
     <script src="assets/js/static/utils.js"></script>

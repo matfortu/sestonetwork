@@ -1,5 +1,9 @@
 var flag = false;
 
+var options = {width: 854, height: 480, channel: "sestonetwork", layout: "video"};
+
+var embed = new Twitch.Embed("twitch", options);
+
 $(document).ready(function() {
     NowPlaying();
 });
