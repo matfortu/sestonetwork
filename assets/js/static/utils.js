@@ -33,12 +33,12 @@ function condividi(){
 function inOnda(){
     switch(day.getDay()) {
         case 0:
-            if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
             break;
         case 1:
-        	if(time >= 1900 && time <= 2000) {
+        	if(time >= 0000 && time <= 0100) {
+                inonda = "Black-Xtasy";
+            }
+        	else if(time >= 1900 && time <= 2000) {
                 inonda = "Prof's Strange Bag";
             }
             else if(time >= 2000 && time <= 2100) {
