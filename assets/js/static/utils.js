@@ -38,10 +38,7 @@ function inOnda(){
             }
             break;
         case 1:
-        	if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
-            else if(time >= 1900 && time <= 2000) {
+        	if(time >= 1900 && time <= 2000) {
                 inonda = "Prof's Strange Bag";
             }
             else if(time >= 2000 && time <= 2100) {
@@ -52,18 +49,12 @@ function inOnda(){
             }
             break;
         case 2:
-        	if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
-            else if(time >= 1000 && time < 1100) {
+        	if(time >= 1000 && time < 1100) {
                 inonda = "Buongiorno Vanessa";
             }
             break;
         case 3:
-            if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
-            else if(time >= 1830 && time <= 1930) {
+            if(time >= 1830 && time <= 1930) {
                 inonda = "Talk'n'Shoot";
             }
             else if(time >= 2000 && time <= 2100) {
@@ -74,10 +65,7 @@ function inOnda(){
             }
             break;
         case 4:
-        	if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
-            else if(time >= 1900 && time <= 2000) {
+        	if(time >= 1900 && time <= 2000) {
                 inonda = "Karesansui";
             }
             else if(time >= 2100 && time <= 2200) {
@@ -99,9 +87,6 @@ function inOnda(){
             }
             break;
         case 6:
-            if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
             break;
     }
 
