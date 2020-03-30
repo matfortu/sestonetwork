@@ -1,15 +1,13 @@
 var day = new Date();
-var days = ["#lunedi", "#lunedi", "#martedi", "#mercoledi", "#giovedi", "#venerdi", "#lunedi"];
+var days = ["#domenica", "#lunedi", "#martedi", "#mercoledi", "#giovedi", "#venerdi", "#sabato"];
 var time = day.getHours().toString().padStart(2, '0') + day.getMinutes().toString().padStart(2, '0');
 var inonda = "Rotazione Musicale";
 var updateInOnda = setInterval(inOnda, 300000);
 
 $( document ).ready(function() {
     inOnda();
-    if(day.getDay() > 1 || day.getDay() < 5) {
-        $("#lunedi").removeClass('active');
-        $(days[day.getDay()]).addClass('active');
-    }
+    $("#lunedi").removeClass('active');
+    $(days[day.getDay()]).addClass('active');
 });
 
 const shareData = {
