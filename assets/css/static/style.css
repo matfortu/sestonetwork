@@ -173,3 +173,19 @@ a:hover {
   color: #d33344;
 }
 
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: #ccc;
+    height:15px;
+    width: 100%;
+    border-radius: 15px;
+}
+ 
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #D33344;
+    height: 20px;
+    opacity: 0.8;
+    width: 20px;
+    border-radius: 20px;
+}

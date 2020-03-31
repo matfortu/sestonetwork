@@ -28,6 +28,10 @@ function playPausa() {
 	}
 };
 
+function SetVolume(val) {
+    audio.volume = val / 100;
+};
+
 function checkVideo() {
     $("#divVideo").collapse('toggle');
     $("#playpausa").removeClass("fa-pause-circle").addClass("fa-play-circle");

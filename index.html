@@ -13,13 +13,16 @@
 </head>
 
 <body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" src="assets/img/static/logo.png" style="margin: 0px;margin-top: 30px;max-width: 20%;">
-	<div class="container" style="width: 600px;max-width: 100%;">
+	<div class="container" style="width: 600px;max-width: 100%;margin-bottom: 1%;">
 		<audio id="audio">
 			<source src="https://sestonetwork.cloud:8002//;stream.mp3" type="audio/mpeg">
 		</audio>
 		<i class="fa fa-video-camera" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i>
 		<i id="playpausa" class="fa fa-play-circle" style="font-size: 70px;padding-right: 15px;padding-left: 15px;padding-top: 15px;" onclick="playPausa();"></i>
 		<i onclick="condividi();" class="fa fa-share-alt" id="share" style="font-size: 45px;padding-left: 15px;"></i>
+	</div>
+	<div class="container" style="width: 300px;max-width: 100%;">
+		<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
 	</div>
     <div class="container" id="menu" style="margin-top: 1%;max-width: 100%;width: 790px;">
         <div class="row" id="menu">
