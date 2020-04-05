@@ -22,7 +22,17 @@
 		<i onclick="condividi();" class="fa fa-share-alt" id="share" style="font-size: 45px;padding-left: 15px;"></i>
 	</div>
 	<div class="container" style="width: 300px;max-width: 100%;">
-		<input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+		<div class="row">
+            <div class="col">
+				<i class="fa fa-volume-down" style="font-size: 20px;"></i>
+			</div>
+			<div class="col-8">
+				<input id="vol-control" type="range" min="0" max="80" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+			</div>
+			<div class="col">
+				<i class="fa fa-volume-up" style="font-size: 20px;"></i>
+			</div>
+		</div>
 	</div>
     <div class="container" id="menu" style="margin-top: 1%;max-width: 100%;width: 790px;">
         <div class="row" id="menu">
@@ -104,122 +114,134 @@
             <div class="carousel slide" data-ride="carousel" data-interval="false" id="carousel-1">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active" id="lunedi">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Lunedì</h3>
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-bottom: 10px;padding-top: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>19:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;font-style: normal;" data-toggle="modal" data-target="#profs">Prof's Strange Bag</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Luca Strano</span></div>
+                        <h3 class="text-danger giorno">Lunedì</h3>
+                        <div class="row prog" style="font-family: Amiko, sans-serif;padding-bottom: 10px;padding-top: 10px;">
+                            <div class="ora">10:30</div>
+                            <div class="modale">brioches</div>
+                            <div class="nome">Logiche e Brioches</div>
+                            <div class="conduttore">Il Konte & Elena</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span><strong>20:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#fracasso">Fracasso GeniAle</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Francesco, Alessandra, Federica, Leonardo &amp; Antonio</span></div>
+                        <div class="row prog">
+                            <div class="ora">20:00</div>
+                            <div class="modale">fracasso</div>
+                            <div class="nome">Fracasso GeniAle</div>
+                            <div class="conduttore">Francesco, Alessandra, Federica, Leonardo &amp; Antonio</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span><strong>22:30</strong></span></div>
-                            <div class="col align-self-center" style="font-family: Amiko, sans-serif;"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#siesta">La Siesta di Notte</span></div>
-                            <div class="col align-self-center" style="font-family: Amiko, sans-serif;"><span>Il Collegio</span></div>
-                        </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
                     </div>
                     <div class="carousel-item" id="martedi">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Martedì</h3>
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>10:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#vanessa">Buongiorno Vanessa</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Vanessa</span></div>
+                        <h3 class="text-danger giorno">Martedì</h3>
+                        <div class="row prog">
+                            <div class="ora">10:30</div>
+                            <div class="modale">biblio</div>
+                            <div class="nome">BiblioBoom</div>
+                            <div class="conduttore">Francesco Grande</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="margin-top: 3%;font-family: Amiko, sans-serif;margin-bottom: 3%;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:00 (ogni due settimane)</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#rainbow">Rainbow Talking</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">GayMin Out - LGBT Nord Milano</span></div>
+                        <div class="row prog">
+                            <div class="ora">21:00 (ogni due settimane)</div>
+                            <div class="modale">rainbow</div>
+                            <div class="nome">Rainbow Talking</div>
+                            <div class="conduttore">GayMin Out - LGBT Nord Milano</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:00 (ogni due settimane)</strong></span></div>
-                            <div class="col align-self-center" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#clublibro"><span class="programma" style="font-family: Amiko, sans-serif;">Club del Libro</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Nikita &amp; Antonia</span></div>
+                        <div class="row prog">
+                            <div class="ora">21:00 (ogni due settimane)</div>
+                            <div class="modale">clublibro</div>
+                            <div class="nome">Club del Libro</div>
+                            <div class="conduttore">Nikita & Antonia</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
                     </div>
                     <div class="carousel-item" id="mercoledi">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Mercoledì</h3>
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>18:30</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#talknshoot">Talk'n'Shoot</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Lorenzo</span></div>
+                        <h3 class="text-danger giorno">Mercoledì</h3>
+                        <div class="row prog">
+                            <div class="ora">10:30</div>
+                            <div class="modale">brioches</div>
+                            <div class="nome">Logiche e Brioches</div>
+                            <div class="conduttore">Il Konte & Elena</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>20:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#schiappe">Diario delle Schiappe</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Paolo, Margherita, Riccardo, Giulia &amp; Fra</span></div>
+                        <div class="row prog">
+                            <div class="ora">15:00</div>
+                            <div class="modale">vnm</div>
+                            <div class="nome">Vita Natural Metropolitana</div>
+                            <div class="conduttore">La Lo & La Ro</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:15</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#tbg">Il Salotto del TBG</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Marco &amp; Andrea</span></div>
+                        <div class="row prog">
+                            <div class="ora">21:15</div>
+                            <div class="modale">tbg</div>
+                            <div class="nome">Il Salotto del TBG</div>
+                            <div class="conduttore">Marco & Andrea</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>22:30 (una volta al mese)</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#poetilici">Notturno Poetilico</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Jack, Marco, Zoe, Adriano &amp; Marina</span></div>
-                        </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
                     </div>
                     <div class="carousel-item" id="giovedi">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Giovedì</h3>
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>19:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#karesansui">Karesansui</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Stefano Gelati</span></div>
+                    	<h3 class="text-danger giorno">Giovedì</h3>
+                    	<div class="row prog">
+                            <div class="ora">10:30</div>
+                            <div class="modale">biblio</div>
+                            <div class="nome">BiblioBoom</div>
+                            <div class="conduttore">Francesco Grande</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>21:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#arthropoda">Radiofonica Live Museum</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">William &amp; Ilaria</span></div>
+                        <div class="row prog">
+                            <div class="ora">18:00</div>
+                            <div class="modale">talknshoot</div>
+                            <div class="nome">Talk'n'Shoot</div>
+                            <div class="conduttore">Lorenzo</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span><strong>00:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#xtasy">Black-Xtasy</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Il Konte</span></div>
+                        <div class="row prog">
+                            <div class="ora">19:00</div>
+                            <div class="modale">karesansui</div>
+                            <div class="nome">Karesansui</div>
+                            <div class="conduttore">Stefano Gelati</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row prog">
+                            <div class="ora">21:00</div>
+                            <div class="modale">arthropoda</div>
+                            <div class="nome">Radiofonica Live Museum</div>
+                            <div class="conduttore">William & Ilaria</div>
+                        </div>
+                        <div class="row prog">
+                            <div class="ora">00:00</div>
+                            <div class="modale">xtasy</div>
+                            <div class="nome">Black-Xtasy</div>
+                            <div class="conduttore">Il Konte</div>
+                        </div>
                     </div>
                     <div class="carousel-item" id="venerdi">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Venerdì</h3>
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>19:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#mazzate">Mazzate... e basta!</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Maurizio Mazza</span></div>
+                        <h3 class="text-danger giorno">Venerdì</h3>
+                    	<div class="row prog">
+                            <div class="ora">10:30</div>
+                            <div class="modale">biblio</div>
+                            <div class="nome">BiblioBoom</div>
+                            <div class="conduttore">Francesco Grande</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;"><strong>20:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#science">Science Shots</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Jacopo &amp; Ilaria</span></div>
+                        <div class="row prog"">
+                            <div class="ora">19:00</div>
+                            <div class="modale">mazzate</div>
+                            <div class="nome">Mazzate... e basta!</div>
+                            <div class="conduttore">Maurizio Mazza</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row prog">
+                            <div class="ora">20:00</div>
+                            <div class="modale">science</div>
+                            <div class="nome">Science Shots</div>
+                            <div class="conduttore">Jacopo & Ilaria</div>
+                        </div>
+                        <div class="row prog">
+                            <div class="ora">22:30</div>
+                            <div class="modale">poetilici</div>
+                            <div class="nome">Notturno Poetilico</div>
+                            <div class="conduttore">Jack, Marco, Zoe, Adriano & Marina</div>
+                        </div>
                     </div>
                     <div class="carousel-item" id="sabato">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Sabato</h3>
+                        <h3 class="text-danger giorno">Sabato</h3>
                         <hr style="margin-top: 8px;margin-bottom: 8px;">
                     </div>
                     <div class="carousel-item" id="domenica">
-                        <h3 class="text-danger" style="font-family: Amiko, sans-serif;">Domenica</h3>
-                        <div class="row" style="font-family: Amiko, sans-serif;padding-top: 10px;padding-bottom: 10px;">
-                            <div class="col align-self-center"><span><strong>00:00</strong></span></div>
-                            <div class="col align-self-center"><span class="programma" style="font-family: Amiko, sans-serif;" data-toggle="modal" data-target="#xtasy">Black-Xtasy</span></div>
-                            <div class="col align-self-center"><span style="font-family: Amiko, sans-serif;">Il Konte</span></div>
+                        <h3 class="text-danger giorno">Domenica</h3>
+                        <div class="row prog">
+                            <div class="ora">00:00</div>
+                            <div class="modale">xtasy</div>
+                            <div class="nome">Black-Xtasy</div>
+                            <div class="conduttore">Il Konte</div>
                         </div>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
                     </div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button"
@@ -238,202 +260,133 @@
         <p id="live" class="text-muted" style="font-family: Amiko, sans-serif;"></p>
         <p id="titolo" class="text-muted" style="font-family: Amiko, sans-serif;">ROTAZIONE MUSICALE</p>
     </div>
-    <div class="modal fade"
-        role="dialog" tabindex="-1" id="profs">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Prof's Strange Bag</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/prof.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;"><br />Dalla valigia del professore escono brani e curiosità dal mondo musicale e metropolitano... sempre in partenza dal binario 6<br /><br /></p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">profs</div>
+        <div class="modtitolo">Prof's Strange Bag</div>
+        <div class="modimm">assets/img/static/locandine/prof.jpg</div>
+        <div class="moddescr">Dalla valigia del professore escono brani e curiosità dal mondo musicale e metropolitano... sempre in partenza dal binario 6</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="fracasso">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Fracasso GeniAle</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/fracasso.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Fracasso Geniale va in onda una volta alla settimana, precisamente il lunedì dalle 20:00 alle 21:30. Si discute, a partire da un tema predefinito (ogni volta diverso), per cogliere qualsiasi sfumatura - se possibile anche di più - associata alla variegata esperienza di essere genitore. Fracasso GeniAle è sensibile al tema Ambiente (da qui è stato coniato e lanciato il virale slogan "PLASTIC ONE...PLASTIC TWO...PLASTIC FREE"). Non mancano le rubriche fisse: "Le pulci di Antonio" vede, con gli occhi del nostro entomologo, il mondo genitoriale. È imminente il lancio di un'ulteriore rubrica fissa di astrologia.</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">fracasso</div>
+        <div class="modtitolo">Fracasso GeniAle</div>
+        <div class="modimm">assets/img/static/locandine/fracasso.jpg</div>
+        <div class="moddescr">In Fracasso GeniAle si discute, a partire da un tema predefinito (ogni volta diverso), per cogliere qualsiasi sfumatura - se possibile anche di più - associata alla variegata esperienza di essere genitore. Fracasso GeniAle è sensibile al tema Ambiente (da qui è stato coniato e lanciato il virale slogan "PLASTIC ONE...PLASTIC TWO...PLASTIC FREE"). Non mancano le rubriche fisse: "Le pulci di Antonio" vede, con gli occhi del nostro entomologo, il mondo genitoriale. È imminente il lancio di un'ulteriore rubrica fissa di astrologia.</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="siesta">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">La Siesta di Notte</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/siesta.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Il collegio di notte dorme, ma un gruppetto di alunni è in fuga... e fa danni!</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">siesta</div>
+        <div class="modtitolo">La Siesta di Notte</div>
+        <div class="modimm">assets/img/static/locandine/siesta.jpg</div>
+        <div class="moddescr">Il collegio di notte dorme, ma un gruppetto di alunni è in fuga... e fa danni!</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="vanessa">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Buongiorno Vanessa - La Sveglia Rosa del Martedì</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/vanessa.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">TBD</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">vanessa</div>
+        <div class="modtitolo">Buongiorno Vanessa - La Sveglia Rosa del Martedì</div>
+        <div class="modimm">assets/img/static/locandine/vanessa.jpg</div>
+        <div class="moddescr">TBD</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="rainbow">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Rainbow Talking</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/rainbow.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Rainbow Talking è la trasmissione in collaborazione con l’associazione GayMin Out - LGBT Nord Milano. In ogni puntata racconteremo storie, eventi, news legate alla comunità LGBTQIA+ per offrire spunti di riflessione sulla questione dei Diritti Civili in Italia e nel mondo.</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+    
+    <div class="progmod">
+        <div class="modid">rainbow</div>
+        <div class="modtitolo">Rainbow Talking</div>
+        <div class="modimm">assets/img/static/locandine/rainbow.jpg</div>
+        <div class="moddescr">Rainbow Talking è la trasmissione in collaborazione con l’associazione GayMin Out - LGBT Nord Milano. In ogni puntata racconteremo storie, eventi, news legate alla comunità LGBTQIA+ per offrire spunti di riflessione sulla questione dei Diritti Civili in Italia e nel mondo.</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="clublibro">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Club del Libro</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/clublibro.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Leggi libri come se da ciò dipendesse la tua vita? Se la risposta è si, noi siamo qui per condividere questa passione con te! Con incursioni nel mondo del cinema e dei fumetti...</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+    
+    <div class="progmod">
+        <div class="modid">clublibro</div>
+        <div class="modtitolo">Club del Libro</div>
+        <div class="modimm">assets/img/static/locandine/clublibro.jpg</div>
+        <div class="moddescr">Leggi libri come se da ciò dipendesse la tua vita? Se la risposta è si, noi siamo qui per condividere questa passione con te! Con incursioni nel mondo del cinema e dei fumetti...</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="talknshoot">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Talk'n'Shoot</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/talknshoot.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Talk'n'Shoot è un programma radiofonico condotto da Lorenzo Infanti. La trasmissione tratta di argomenti cinematografici, fumettistici, ludici e di tematiche legate alla cultura pop. L'obiettivo principale del progetto è quello di sviluppare un dibattito culturale costruttivo e stimolante, cercando di coinvolgere le varie realtà di Sesto.</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+        
+    <div class="progmod">
+        <div class="modid">brioches</div>
+        <div class="modtitolo">Logiche e Brioches</div>
+        <div class="modimm">assets/img/static/locandine/brioches.jpg</div>
+        <div class="moddescr">Si dice che tutti i libri del mondo non valgono un caffè con un amico e allora a noi non resta che offrirvi la colazione....completa di oroscopo, pensieri e buona musica</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="schiappe">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Diario delle Schiappe</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/schiappe.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">I ragazzi del diario da anni raccontano la loro quotidianità. Paolo ha iniziato 4 anni fa e man mano si sono aggiunti conduttori, oggi il diario delle schiappe vanta ben cinque conduttori, Margherita, Riccardo, Giulia e Fra. Tutti i mercoledì si raccontano. Sempre pronti a dire la loro.</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">talknshoot</div>
+        <div class="modtitolo">Talk'n'Shoot</div>
+        <div class="modimm">assets/img/static/locandine/talknshoot.jpg</div>
+        <div class="moddescr">Talk'n'Shoot è un programma radiofonico condotto da Lorenzo Infanti. La trasmissione tratta di argomenti cinematografici, fumettistici, ludici e di tematiche legate alla cultura pop. L'obiettivo principale del progetto è quello di sviluppare un dibattito culturale costruttivo e stimolante, cercando di coinvolgere le varie realtà di Sesto.</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="tbg">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Il Salotto del TBG</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/tbg.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Il salotto del TBG è, come dice la parola stessa, una chiacchierata fra amici. Un salotto radiofonico ed a tratti surreale, nel quale Marco e Andrea di <a href="https://www.youtube.com/channel/UCbQpyC195Z_roSCkLenf5NQ">Total Board Game</a>  portano in onda un po' del mondo dei boardgames, spesso accompagnati da diversi ospiti a sorpresa pescati dagli eventi del vicino Punto Zero. Questo, unito ad una forte ironia e una grande dose di sana improvvisazione, permette ad ogni puntata di partire da giochi da tavolo e da tematiche specifiche, per poi evolversi fino a prendere pieghe inaspettate ed imprevedibili. Si arrivano a toccare così gli argomenti più disparati e spesso molto lontani da quelli di partenza, grazie anche ai vari interessi del duo. Insomma sono tutte chiacchiere... ma in senso positivo!</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">schiappe</div>
+        <div class="modtitolo">Diario delle Schiappe</div>
+        <div class="modimm">assets/img/static/locandine/schiappe.jpg</div>
+        <div class="moddescr">I ragazzi del diario da anni raccontano la loro quotidianità. Paolo ha iniziato 4 anni fa e man mano si sono aggiunti conduttori, oggi il diario delle schiappe vanta ben cinque conduttori, Margherita, Riccardo, Giulia e Fra. Tutti i mercoledì si raccontano. Sempre pronti a dire la loro.</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="poetilici">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Notturno Poetilico</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/notturno.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Cinque poeti a lume di candela, alle prese con le loro libere associazioni. Attorno a un oggetto freudiano: la Notte, innanzi tutto. E poi unicorni, tapparelle, trappole, astronavi... Una trasmissione che è anche un esperimento sociale.</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">tbg</div>
+        <div class="modtitolo">Il Salotto del TBG</div>
+        <div class="modimm">assets/img/static/locandine/tbg.jpg</div>
+        <div class="moddescr">Il salotto del TBG è, come dice la parola stessa, una chiacchierata fra amici. Un salotto radiofonico ed a tratti surreale, nel quale Marco e Andrea di <a href="https://www.youtube.com/channel/UCbQpyC195Z_roSCkLenf5NQ">Total Board Game</a>  portano in onda un po' del mondo dei boardgames, spesso accompagnati da diversi ospiti a sorpresa pescati dagli eventi del vicino Punto Zero. Questo, unito ad una forte ironia e una grande dose di sana improvvisazione, permette ad ogni puntata di partire da giochi da tavolo e da tematiche specifiche, per poi evolversi fino a prendere pieghe inaspettate ed imprevedibili. Si arrivano a toccare così gli argomenti più disparati e spesso molto lontani da quelli di partenza, grazie anche ai vari interessi del duo. Insomma sono tutte chiacchiere... ma in senso positivo!</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="karesansui">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Karesansui</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/karesansui.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">In questa società che ha fatto dell’indifferenza un metodo, e dell’ignoranza una virtù, c’è uno spazio di cultura indipendente, armoniosa, emozionante. Uno spazio antropologico, storico, geografico, per chi di voi desidera informazione senza dimenticare musica e poesia.<br><br>I Podcast delle puntate precedenti sono disponibili all’indirizzo: <a href="https://karesansuiart.wordpress.com/podcasts" target="_blank">karesansuiart.wordpress.com/podcasts</a></p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">poetilici</div>
+        <div class="modtitolo">Notturno Poeticilo</div>
+        <div class="modimm">assets/img/static/locandine/notturno.jpg</div>
+        <div class="moddescr">Cinque poeti a lume di candela, alle prese con le loro libere associazioni. Attorno a un oggetto freudiano: la Notte, innanzi tutto. E poi unicorni, tapparelle, trappole, astronavi... Una trasmissione che è anche un esperimento sociale.</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="arthropoda">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Radiofonica Live Museum - Rubrica Arthropoda</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/arthropoda.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Il nuovo programma condotto dal Team dell’Arthropoda Live Museum! – Radiofonica Live Museum Vi presenterà tutto ciò che non avreste mai potuto immaginare dal mondo naturale e molto di più! Attualità, scienza ed una buona dose di organismi viventi sono gli ingredienti del nostro nuovo imperdibile programma radiofonico, per imparare e stupirci insieme dinanzi alla maestosità della natura… <br>Ad ogni puntata viene descritto un animale particolare e poco conosciuto od affrontata una tematica di attualità riguardante la scienza, per sensibilizzare la cittadinanza ad una corretta gestione delle risorse naturali e fornire un tipo di informazione corretta e dettagliata ma mai noiosa circa le notizie più diffuse su social network, notiziari o mass media…</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">karesansui</div>
+        <div class="modtitolo">Karesansui</div>
+        <div class="modimm">assets/img/static/locandine/karesansui.jpg</div>
+        <div class="moddescr">In questa società che ha fatto dell’indifferenza un metodo, e dell’ignoranza una virtù, c’è uno spazio di cultura indipendente, armoniosa, emozionante. Uno spazio antropologico, storico, geografico, per chi di voi desidera informazione senza dimenticare musica e poesia.<br><br>I Podcast delle puntate precedenti sono disponibili all’indirizzo: <a href="https://karesansuiart.wordpress.com/podcasts" target="_blank">karesansuiart.wordpress.com/podcasts</a></div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="mazzate">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Mazzate... e basta!</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/mazzate.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Il mondo è a misura del Mazza, una conduzione vulcanica in cui Sesto è al centro di un mondo in costante fibrillazione!</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">arthropoda</div>
+        <div class="modtitolo">Radiofonica Live Museum - Rubrica Arthropoda</div>
+        <div class="modimm">assets/img/static/locandine/arthropoda.jpg</div>
+        <div class="moddescr">Il nuovo programma condotto dal Team dell’Arthropoda Live Museum! – Radiofonica Live Museum Vi presenterà tutto ciò che non avreste mai potuto immaginare dal mondo naturale e molto di più! Attualità, scienza ed una buona dose di organismi viventi sono gli ingredienti del nostro nuovo imperdibile programma radiofonico, per imparare e stupirci insieme dinanzi alla maestosità della natura… <br>Ad ogni puntata viene descritto un animale particolare e poco conosciuto od affrontata una tematica di attualità riguardante la scienza, per sensibilizzare la cittadinanza ad una corretta gestione delle risorse naturali e fornire un tipo di informazione corretta e dettagliata ma mai noiosa circa le notizie più diffuse su social network, notiziari o mass media…</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="xtasy">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Black-Xtasy</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/xtasy.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">A Kosmik & Kundalinic Rhythm from The Zero Basement, a black fluid in the Konte's casual way</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">mazzate</div>
+        <div class="modtitolo">Mazzate... e basta!</div>
+        <div class="modimm">assets/img/static/locandine/mazzate.jpg</div>
+        <div class="moddescr">Il mondo è a misura del Mazza, una conduzione vulcanica in cui Sesto è al centro di un mondo in costante fibrillazione!</div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="science">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                    <h4 class="modal-title" style="font-family: Amiko, sans-serif;">Science Shots</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="assets/img/static/locandine/science.jpg" /></div><div class="col-md-7 align-self-center">
-    <p style="font-family: Amiko, sans-serif;">Science shots, ovvero "frammenti di scienza", tocca le materie scientifiche più note e conosciute: fisica, biologia e genetica. Divulgazione ed informazione sulle scoperte e ricerche innovative degli ultimi anni. Un buon modo per scoprire, pensare ed curiosare nella scienza in maniera facile e divertente! In onda ogni due settimane</p>
-</div></div>
-                </div>
-            </div>
-        </div>
+
+    <div class="progmod">
+        <div class="modid">xtasy</div>
+        <div class="modtitolo">Black-Xtasy</div>
+        <div class="modimm">assets/img/static/locandine/xtasy.jpg</div>
+        <div class="moddescr">A Kosmik & Kundalinic Rhythm from The Zero Basement, a black fluid in the Konte's casual way</div>
     </div>
+
+    <div class="progmod">
+        <div class="modid">science</div>
+        <div class="modtitolo">Science Shots</div>
+        <div class="modimm">assets/img/static/locandine/science.jpg</div>
+        <div class="moddescr">Science shots, ovvero "frammenti di scienza", tocca le materie scientifiche più note e conosciute: fisica, biologia e genetica. Divulgazione ed informazione sulle scoperte e ricerche innovative degli ultimi anni. Un buon modo per scoprire, pensare ed curiosare nella scienza in maniera facile e divertente! In onda ogni due settimane</div>
+    </div>
+
+    <div class="progmod">
+        <div class="modid">vnm</div>
+        <div class="modtitolo">Vita Natural Metropolitana</div>
+        <div class="modimm">assets/img/static/locandine/vnm.jpg</div>
+        <div class="moddescr">TBD</div>
+    </div>
+
+    <div class="progmod">
+        <div class="modid">biblio</div>
+        <div class="modtitolo">BiblioBoom</div>
+        <div class="modimm">assets/img/static/locandine/biblio.jpg</div>
+        <div class="moddescr">A BiblioBoom presenteremo libri, cd musicali, dvd, servizi che offrono le biblioteche, il tutto arricchito dalla presenza di tantissimi ospiti!</div>
+    </div>
+
     <footer style="font-family: Amiko, sans-serif; font-size: 12px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
     <script src="/socket.io/socket.io.js"></script>
     <script src="assets/js/jquery.min.js"></script>
