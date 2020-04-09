@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/static/style.css">
 </head>
 
-<body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" src="assets/img/static/logo.png" style="margin: 0px;margin-top: 30px;max-width: 20%;">
+<body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" alt="SestoNetwork" src="assets/img/static/logo.png" style="margin: 0px;margin-top: 30px;max-width: 20%;">
 	<div class="container" style="width: 600px;max-width: 100%;margin-bottom: 1%;">
 		<audio id="audio">
 			<source src="https://sestonetwork.cloud:8002//;stream.mp3" type="audio/mpeg">
@@ -27,22 +27,29 @@
 				<i class="fa fa-volume-down" style="font-size: 20px;"></i>
 			</div>
 			<div class="col-8">
-				<input id="vol-control" type="range" min="0" max="80" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+				<input id="vol-control" type="range" min="0" max="80" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
 			</div>
 			<div class="col">
 				<i class="fa fa-volume-up" style="font-size: 20px;"></i>
 			</div>
 		</div>
 	</div>
-    <div class="container" id="menu" style="margin-top: 1%;max-width: 100%;width: 790px;">
-        <div class="row" id="menu">
-            <div class="col" style="font-family: Amiko, sans-serif;">
-                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button">CHAT</span></div>
-                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-4" href="#collapse-4" role="button">PALINSESTO</span></div>
+    <div class="container" id="menu" style="margin-top: 1%;width: 100%;">
+        <div class="row">
+            <div class="col menu-button" style="font-family: Amiko, sans-serif;">
+                <div class="d-inline-block" style="height: 45px;width: 160px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-1" role="button">CHI&nbsp;SIAMO</span></div>
             </div>
-            <div class="col" style="font-family: Amiko, sans-serif;">
-                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-1" role="button">CHI&nbsp;SIAMO</span></div>
-                <div class="d-inline-block" style="height: 45px;width: 155px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-2" href="#collapse-2" role="button">CONTATTI</span></div>
+            <div class="col menu-button" style="font-family: Amiko, sans-serif;">
+                <div class="d-inline-block" style="height: 45px;width: 160px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-2" href="#collapse-2" role="button">CONTATTI</span></div>
+            </div>
+            <div class="col menu-button" style="font-family: Amiko, sans-serif;">
+            	<div class="d-inline-block" style="height: 45px;width: 160px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-4" href="#collapse-4" role="button">PALINSESTO</span></div>
+            </div>
+            <div class="col menu-button" style="font-family: Amiko, sans-serif;">
+                <div class="d-inline-block" style="height: 45px;width: 160px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-5" role="button">REPLICHE</span></div>
+            </div>
+            <div class="col menu-button" style="font-family: Amiko, sans-serif;">
+                <div class="d-inline-block" style="height: 45px;width: 160px;max-width: 100%;margin: 5px;"><span class="round-btn" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button">CHAT</span></div>
             </div>
         </div>
     </div>
@@ -50,11 +57,10 @@
         <div id="divVideo" class="collapse">
         	<div class="embed-responsive embed-responsive-16by9" id="playerVideo">
 		    	<div id="twitch"></div>
-				</script>
 			</div>
 		</div>
     </div>
-    <div class="container" id="contenuto" style="max-width: 750px;">
+    <div class="container" id="contenuto" style="width: 80%;">
         <div id="collapse-1" class="collapse" style="max-width: auto;" data-parent="#contenuto">
             <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Chi Siamo</h1>
             <hr class="linea" style="margin-top: 0px;">
@@ -99,6 +105,9 @@
 				    </div>
 			    </div>
 			</div></div>
+
+			<!-- PALINSESTO -->
+
         <div id="collapse-4" class="collapse" style="max-width: auto;" data-parent="#contenuto">
             <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Palinsesto</h1>
             <hr class="linea" style="margin-top: 0px;margin-bottom: -8px;">
@@ -115,7 +124,7 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active" id="lunedi">
                         <h3 class="text-danger giorno">Lunedì</h3>
-                        <div class="row prog" style="font-family: Amiko, sans-serif;padding-bottom: 10px;padding-top: 10px;">
+                        <div class="row prog">
                             <div class="ora">10:30</div>
                             <div class="modale">brioches</div>
                             <div class="nome">Logiche e Brioches</div>
@@ -134,7 +143,7 @@
                             <div class="ora">10:30</div>
                             <div class="modale">biblio</div>
                             <div class="nome">BiblioBoom</div>
-                            <div class="conduttore">Francesco Grande</div>
+                            <div class="conduttore">Francesco Grande & Helios</div>
                         </div>
                         <div class="row prog">
                             <div class="ora">21:00 (ogni due settimane)</div>
@@ -164,7 +173,7 @@
                             <div class="conduttore">La Lo & La Ro</div>
                         </div>
                         <div class="row prog">
-                            <div class="ora">21:15</div>
+                            <div class="ora">21:00</div>
                             <div class="modale">tbg</div>
                             <div class="nome">Il Salotto del TBG</div>
                             <div class="conduttore">Marco & Andrea</div>
@@ -176,7 +185,7 @@
                             <div class="ora">10:30</div>
                             <div class="modale">biblio</div>
                             <div class="nome">BiblioBoom</div>
-                            <div class="conduttore">Francesco Grande</div>
+                            <div class="conduttore">Francesco Grande & Helios</div>
                         </div>
                         <div class="row prog">
                             <div class="ora">18:00</div>
@@ -209,9 +218,9 @@
                             <div class="ora">10:30</div>
                             <div class="modale">biblio</div>
                             <div class="nome">BiblioBoom</div>
-                            <div class="conduttore">Francesco Grande</div>
+                            <div class="conduttore">Francesco Grande & Helios</div>
                         </div>
-                        <div class="row prog"">
+                        <div class="row prog">
                             <div class="ora">19:00</div>
                             <div class="modale">mazzate</div>
                             <div class="nome">Mazzate... e basta!</div>
@@ -224,7 +233,7 @@
                             <div class="conduttore">Jacopo & Ilaria</div>
                         </div>
                         <div class="row prog">
-                            <div class="ora">22:30</div>
+                            <div class="ora">21:00</div>
                             <div class="modale">poetilici</div>
                             <div class="nome">Notturno Poetilico</div>
                             <div class="conduttore">Jack, Marco, Zoe, Adriano & Marina</div>
@@ -248,6 +257,56 @@
                         data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
             </div>
         </div>
+
+        <!-- REPLICHE -->
+
+        <div id="collapse-5" class="collapse" style="max-width: auto;" data-parent="#contenuto">
+            <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Repliche</h1>
+            <hr class="linea" style="margin-top: 0px;margin-bottom: -8px;">
+            <ol class="breadcrumb justify-content-center" style="font-family: Amiko, sans-serif;font-size: 11px;margin-bottom: 0px;background-color: transparent;">
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="0">Lunedì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="1">Martedì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="2">Mercoledì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="3">Giovedì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="4">Venerdì</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="5">Sabato</span></a></li>
+                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="6">Domenica</span></a></li>
+            </ol>
+            <div class="carousel slide" data-ride="carousel" data-interval="false" id="carousel-2">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" id="lunedi-r">
+                        <h3 class="text-danger giorno">Lunedì</h3>
+                        
+                    </div>
+                    <div class="carousel-item" id="martedi-r">
+                        <h3 class="text-danger giorno">Martedì</h3>
+                        
+                    </div>
+                    <div class="carousel-item" id="mercoledi-r">
+                        <h3 class="text-danger giorno">Mercoledì</h3>
+                        
+                    </div>
+                    <div class="carousel-item" id="giovedi-r">
+                    	<h3 class="text-danger giorno">Giovedì</h3>
+                    	
+                    </div>
+                    <div class="carousel-item" id="venerdi-r">
+                        <h3 class="text-danger giorno">Venerdì</h3>
+                    	
+                    </div>
+                    <div class="carousel-item" id="sabato-r">
+                        <h3 class="text-danger giorno">Sabato</h3>
+                    </div>
+                    <div class="carousel-item" id="domenica-r">
+                        <h3 class="text-danger giorno">Domenica</h3>
+                        
+                    </div>
+                </div>
+                <div><a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-2" role="button"
+                        data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+            </div>
+        </div>
+
         <div id="collapse-2" class="collapse" style="max-width: auto;" data-parent="#contenuto">
             <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Contatti</h1>
             <hr class="linea" style="margin-top: 0px;">
@@ -377,7 +436,7 @@
         <div class="modid">vnm</div>
         <div class="modtitolo">Vita Natural Metropolitana</div>
         <div class="modimm">assets/img/static/locandine/vnm.jpg</div>
-        <div class="moddescr">TBD</div>
+        <div class="moddescr">La Ro e La Lo, chiaccherando a 360 gradi del mondo Olos, raccontano il loro viaggio, la loro avventura, l'esperienza negli anni della loro Amicizia alla scoperta e RI-scoperta di saperi antichi e nuovi, rimedi naturali, ricette, consigli della nonna, aggiornamenti OMS, leggende, racconti. Argomenti attuali trattati in modo scanzonato sempre e solo in versione GREEN. Perché una Vita Natural Metropolitana si PUÒ!</div>
     </div>
 
     <div class="progmod">
@@ -387,7 +446,7 @@
         <div class="moddescr">A BiblioBoom presenteremo libri, cd musicali, dvd, servizi che offrono le biblioteche, il tutto arricchito dalla presenza di tantissimi ospiti!</div>
     </div>
 
-    <footer style="font-family: Amiko, sans-serif; font-size: 12px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
+    <footer style="font-family: Amiko, sans-serif; font-size: 11px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
     <script src="/socket.io/socket.io.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -397,5 +456,4 @@
     <script src="assets/js/static/player.js"></script>
     <script src="assets/js/static/utils.js"></script>
 </body>
-
 </html>

@@ -33,9 +33,15 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 420px) {
   .bubble {
     max-width: 20em!important;
+  }
+  #menu {
+    width:100%!important;
+  }
+  #contenuto {
+    width:100%!important;
   }
 }
 
@@ -63,6 +69,10 @@ a:hover {
 
 .palinsesto {
   overflow-x: scroll;
+}
+
+.menu-button {
+  padding: 0%;
 }
 
 #logo {

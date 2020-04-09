@@ -1,5 +1,6 @@
 var day = new Date();
 var days = ["#domenica", "#lunedi", "#martedi", "#mercoledi", "#giovedi", "#venerdi", "#sabato"];
+var daysr = ["#domenica-r", "#lunedi-r", "#martedi-r", "#mercoledi-r", "#giovedi-r", "#venerdi-r", "#sabato-r"];
 var time = day.getHours().toString().padStart(2, '0') + day.getMinutes().toString().padStart(2, '0');
 var inonda = "Rotazione Musicale";
 var updateInOnda = setInterval(inOnda, 300000);
@@ -7,7 +8,9 @@ var updateInOnda = setInterval(inOnda, 300000);
 $( document ).ready(function() {
     inOnda();
     $("#lunedi").removeClass('active');
+    $("#lunedi-r").removeClass('active');
     $(days[day.getDay()]).addClass('active');
+    $(daysr[day.getDay()]).addClass('active');
 });
 
 const shareData = {
@@ -60,12 +63,12 @@ function inOnda(){
             else if(time >= 1500 && time <= 1600) {
                 inonda = "Vita Natural Metropolitana";
             }
-            else if(time >= 2115 && time <= 2215) {
+            else if(time >= 2100 && time <= 2200) {
                 inonda = "Il Salotto del TBG";
             }
             break;
         case 4:
-        	if(time >= 1030 && time <= 2000) {
+        	if(time >= 1030 && time <= 1130) {
                 inonda = "BiblioBoom";
             }
         	else if(time >= 1800 && time <= 1900) {
@@ -91,7 +94,7 @@ function inOnda(){
             else if(time >= 2000 && time <= 2100) {
                 inonda = "Science Shots";
             }
-            else if(time >= 2230 && time <= 2330) {
+            else if(time >= 2100 && time <= 2200) {
                 inonda = "Notturno Poetilico";
             }
             break;
@@ -127,29 +130,3 @@ $( ".progmod" ).each(function( index ) {
     var modfinal = '<div class="modal fade" role="dialog" tabindex="-1" id="' + modid + '"><div class="modal-dialog modal-lg modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header" style="font-family: Amiko, sans-serif;"><h4 class="modal-title" style="font-family: Amiko, sans-serif;">' + modtitolo + '</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body"><div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="' + modimm + '" /></div><div class="col-md-7 align-self-center"><p style="font-family: Amiko, sans-serif;"><br/>' + moddescr + '<br/><br/></p></div></div></div></div></div></div>';
     $( this ).replaceWith(modfinal);
 });
-
-
-/*<div class="modal fade" role="dialog" tabindex="-1" id="MODID">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="font-family: Amiko, sans-serif;">
-                <h4 class="modal-title" style="font-family: Amiko, sans-serif;">MODTITOLO</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <img style="max-width: 300px;" class="img-fluid" src="MODIMM" />
-                    </div>
-                    <div class="col-md-7 align-self-center">
-                        <p style="font-family: Amiko, sans-serif;">
-                            <br/>MODDESCR<br/><br/>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*/
