@@ -3,17 +3,13 @@ const app = express();
 const http = require('http').createServer(app);
 const titolo = require('http');
 const io = require('socket.io')(http);
+const lastfm = require('./assets/app/lastfm')
+const axios = require("axios");
 var utenti = [];
-const opzioni = {
-  host: 'www.sestonetwork.cloud',
-  port: 3012,
-  path: '/currentsong'
-};
-var song = "";
 
-app.get('/titolo', function (req, res) {
-	res.send(song);
-});
+require('dotenv').config();
+
+app.use(express.json());
 
 app.use('/assets', express.static(__dirname +'/assets'));
 
@@ -28,20 +24,11 @@ app.get('*', function(req, res){
 io.on('connection', function(socket) {
 	console.log('un utente si è connesso');
 
-	socket.on('update_title', function(){
-		titolo.get(opzioni, function(res) {
-  			song = "";
-			res.on("data", function (chunk) {
-        		song += chunk;
-    		});
-		});
-	});
-
 	socket.on('set_username', (data) => {
 		socket.username = data.username;
 		console.log('nuovo username: ' + socket.username);
 		utenti.push(socket.username);
-		io.emit('messaggio_server', socket.username + ' si è unito/a alla chat!');
+		io.emit('messaggio_server', socket.username + ' si è unito/a alla chat! ' + utenti.length + ' utenti in chat.');
 		console.log(utenti);
 	});
 
@@ -67,6 +54,42 @@ io.on('connection', function(socket) {
 		console.log(socket.username + ' : ' + msg);
 		io.emit('messaggio', socket.username, msg);
 	});
+});
+
+app.post('/title', async (req, res) => {
+
+	try {
+		const tt = await axios.get('http://sestonetwork.cloud:3012/currentsong?sid=1')
+		const titolo = tt.data
+
+        return res.json({
+            titolo
+        })
+
+    } catch(e) {
+        console.log(e)
+        return res.status(500)
+    }
+});
+
+app.post('/albumart', async (req, res) => {
+    const { 
+        artist, 
+        track 
+    } = req.body
+
+    try {
+        const info = await lastfm.getInfo(artist, track)
+        const immagine = info.data.track.album.image[3]
+
+        return res.json({
+            immagine
+        })
+
+    } catch(e) {
+        console.log(e)
+        return res.status(500)
+    }
 });
 
 http.listen(3000, function(){

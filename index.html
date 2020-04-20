@@ -241,7 +241,18 @@
                     </div>
                     <div class="carousel-item" id="sabato">
                         <h3 class="text-danger giorno">Sabato</h3>
-                        <hr style="margin-top: 8px;margin-bottom: 8px;">
+                        <div class="row prog">
+                            <div class="ora">11:30</div>
+                            <div class="modale">mazzate</div>
+                            <div class="nome">Mazzate... e basta!</div>
+                            <div class="conduttore">Maurizio Mazza</div>
+                        </div>
+                        <div class="row prog">
+                            <div class="ora">20:00</div>
+                            <div class="modale">mazzate</div>
+                            <div class="nome">Mazzate... e basta!</div>
+                            <div class="conduttore">Maurizio Mazza</div>
+                        </div>
                     </div>
                     <div class="carousel-item" id="domenica">
                         <h3 class="text-danger giorno">Domenica</h3>
@@ -315,9 +326,15 @@
         </div>
     </div>
     <div class="container" style="width: 630px;max-width: 100%;margin-top: 2%;">
-        <p style="font-family: Amiko, sans-serif;max-width: 100%;"><strong>Stai ascoltando:</strong></p>
-        <p id="live" class="text-muted" style="font-family: Amiko, sans-serif;"></p>
-        <p id="titolo" class="text-muted" style="font-family: Amiko, sans-serif;">ROTAZIONE MUSICALE</p>
+        <div class="row">
+            <div class="col-md-6" style="margin-top: auto;margin-bottom: auto;">
+                <p id="live" class="text-muted" style="font-family: Amiko, sans-serif;"></p>
+                <p id="titolo" class="text-muted" style="font-family: Amiko, sans-serif;">ROTAZIONE MUSICALE</p>
+            </div>
+            <div class="col-md-3 order-first">
+                <img id="cover" class="img-fluid img-thumbnail" style="margin-bottom: 4%;" src="assets/img/static/disc.png">
+            </div>
+        </div>
     </div>
 
     <div class="progmod">
@@ -446,7 +463,7 @@
         <div class="moddescr">A BiblioBoom presenteremo libri, cd musicali, dvd, servizi che offrono le biblioteche, il tutto arricchito dalla presenza di tantissimi ospiti!</div>
     </div>
 
-    <footer style="font-family: Amiko, sans-serif; font-size: 11px;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
+    <footer style="font-family: Amiko, sans-serif; font-size: 11px; margin-top: 2%;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
     <script src="/socket.io/socket.io.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

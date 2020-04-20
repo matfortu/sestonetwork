@@ -1,17 +1,45 @@
 var flag = false;
-
 var options = {width: 854, height: 480, channel: "sestonetwork", layout: "video"};
-
 var embed = new Twitch.Embed("twitch", options);
+let titoloCorrente = "";
 
 $(document).ready(function() {
-    NowPlaying();
+    $.post("title", function(data, status) {
+        titoloCorrente = data.titolo;
+        $("#titolo").text(titoloCorrente);
+        getAlbumArt(titoloCorrente);
+    });
 });
 
 function NowPlaying(){
-    $.get("titolo", function(data, status) {
-    	$("#titolo").text(data);
-  	});
+    let titoloNuovo = "";
+    $.post("title", function(data, status) {
+        titoloNuovo = data.titolo;
+        if(titoloCorrente != titoloNuovo) {
+            console.log(titoloCorrente + " -> " + titoloNuovo);
+            titoloCorrente = titoloNuovo;
+            getAlbumArt(titoloCorrente);
+            $("#titolo").text(titoloCorrente);
+        }
+    });
+};
+
+function getAlbumArt(titolo){
+    var dati = titolo.split(" - ");
+    $.ajax({
+        type: "POST",
+        url: "albumart",
+        data: JSON.stringify({artist: dati[0], track: dati[1]}),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data){
+            $( "#cover" ).attr( "src", data.immagine["#text"]);
+        },
+        failure: function(errMsg) {
+            console.log("error");
+            $( "#cover" ).attr( "src", "assets/img/static/disc.png" );
+        }
+    });
 };
 
 function playPausa() {
@@ -41,4 +69,4 @@ function checkVideo() {
 
 setInterval(function(){
     NowPlaying();
-}, 1000);
+}, 5000);
