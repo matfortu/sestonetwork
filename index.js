@@ -67,7 +67,6 @@ app.post('/title', async (req, res) => {
         })
 
     } catch(e) {
-        console.log(e)
         return res.status(500)
     }
 });
@@ -87,7 +86,6 @@ app.post('/albumart', async (req, res) => {
         })
 
     } catch(e) {
-        console.log(e)
         return res.status(500)
     }
 });
