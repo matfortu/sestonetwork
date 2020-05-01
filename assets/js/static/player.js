@@ -33,7 +33,12 @@ function getAlbumArt(titolo){
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data){
-            $( "#cover" ).attr( "src", data.immagine["#text"]);
+            if(data.immagine["#text"] == '') {
+                $( "#cover" ).attr( "src", "assets/img/static/disc.png" );
+            }
+            else {
+                $( "#cover" ).attr( "src", data.immagine["#text"]);
+            }
         },
         failure: function(errMsg) {
             console.log("error");

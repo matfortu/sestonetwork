@@ -63,9 +63,11 @@ function inOnda(){
             else if(time >= 1500 && time <= 1600) {
                 inonda = "Vita Natural Metropolitana";
             }
+            /*
             else if(time >= 2100 && time <= 2200) {
                 inonda = "Il Salotto del TBG";
             }
+            */
             break;
         case 4:
         	if(time >= 1030 && time <= 1130) {
@@ -127,6 +129,6 @@ $( ".progmod" ).each(function( index ) {
     $( this ).children(".modimm").remove();
     var moddescr = $( this ).children(".moddescr").text();
     $( this ).children(".moddescr").remove();
-    var modfinal = '<div class="modal fade" role="dialog" tabindex="-1" id="' + modid + '"><div class="modal-dialog modal-lg modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header" style="font-family: Amiko, sans-serif;"><h4 class="modal-title" style="font-family: Amiko, sans-serif;">' + modtitolo + '</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body"><div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="' + modimm + '" /></div><div class="col-md-7 align-self-center"><p style="font-family: Amiko, sans-serif;"><br/>' + moddescr + '<br/><br/></p></div></div></div></div></div></div>';
+    var modfinal = '<div class="modal fade" role="dialog" tabindex="-1" id="' + modid + '"><div class="modal-dialog modal-lg modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header" style="font-family: Amiko, sans-serif;"><h4 class="modal-title" style="font-family: Amiko, sans-serif;">' + modtitolo + '</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body"><div class="row"><div class="col-md-5"><img style="max-width: 300px;" class="img-fluid" src="' + modimm + '" loading="lazy" /></div><div class="col-md-7 align-self-center"><p style="font-family: Amiko, sans-serif;"><br/>' + moddescr + '<br/><br/></p></div></div></div></div></div></div>';
     $( this ).replaceWith(modfinal);
 });

@@ -22,7 +22,7 @@ app.get('*', function(req, res){
 });
 
 io.on('connection', function(socket) {
-	console.log('un utente si è connesso');
+	//console.log('un utente si è connesso');
 
 	socket.on('set_username', (data) => {
 		socket.username = data.username;

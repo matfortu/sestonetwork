@@ -14,7 +14,7 @@
 
 <body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" alt="SestoNetwork" src="assets/img/static/logo.png" style="margin: 0px;margin-top: 30px;max-width: 20%;">
 	<div class="container" style="width: 600px;max-width: 100%;margin-bottom: 1%;">
-		<audio id="audio">
+		<audio id="audio" volume="0.3">
 			<source src="https://sestonetwork.cloud:8002//;stream.mp3" type="audio/mpeg">
 		</audio>
 		<i class="fa fa-video-camera" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i>
@@ -27,7 +27,7 @@
 				<i class="fa fa-volume-down" style="font-size: 20px;"></i>
 			</div>
 			<div class="col-8">
-				<input id="vol-control" type="range" min="0" max="80" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
+				<input id="vol-control" type="range" min="0" max="70" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
 			</div>
 			<div class="col">
 				<i class="fa fa-volume-up" style="font-size: 20px;"></i>
@@ -172,12 +172,14 @@
                             <div class="nome">Vita Natural Metropolitana</div>
                             <div class="conduttore">La Lo & La Ro</div>
                         </div>
+                    <!--
                         <div class="row prog">
                             <div class="ora">21:00</div>
                             <div class="modale">tbg</div>
                             <div class="nome">Il Salotto del TBG</div>
                             <div class="conduttore">Marco & Andrea</div>
                         </div>
+                    -->
                     </div>
                     <div class="carousel-item" id="giovedi">
                     	<h3 class="text-danger giorno">Giovedì</h3>
@@ -219,12 +221,6 @@
                             <div class="modale">biblio</div>
                             <div class="nome">BiblioBoom</div>
                             <div class="conduttore">Francesco Grande & Helios</div>
-                        </div>
-                        <div class="row prog">
-                            <div class="ora">19:00</div>
-                            <div class="modale">mazzate</div>
-                            <div class="nome">Mazzate... e basta!</div>
-                            <div class="conduttore">Maurizio Mazza</div>
                         </div>
                         <div class="row prog">
                             <div class="ora">20:00</div>
@@ -325,14 +321,14 @@
                 Siamo sempre alla ricerca di persone che hanno voglia di partecipare al nostro progetto, artisti che vogliono condividere la propria musica e organizzatori di eventi che cercano media partner.<br></p>
         </div>
     </div>
-    <div class="container" style="width: 630px;max-width: 100%;margin-top: 2%;">
-        <div class="row">
-            <div class="col-md-6" style="margin-top: auto;margin-bottom: auto;">
+    <div class="container" style="width: 750px;max-width: 100%;margin-top: 2%;">
+        <div class="row justify-content-md-center"> 
+       		<div class="col-md-auto">
+                <img id="cover" class="img-fluid img-thumbnail" style="margin-bottom: 4%;" src="assets/img/static/disc.png">
+            </div>                                                                                
+        	<div class="col-md-auto" style="margin-top: auto;margin-bottom: auto;">
                 <p id="live" class="text-muted" style="font-family: Amiko, sans-serif;"></p>
                 <p id="titolo" class="text-muted" style="font-family: Amiko, sans-serif;">ROTAZIONE MUSICALE</p>
-            </div>
-            <div class="col-md-3 order-first">
-                <img id="cover" class="img-fluid img-thumbnail" style="margin-bottom: 4%;" src="assets/img/static/disc.png">
             </div>
         </div>
     </div>
@@ -400,12 +396,14 @@
         <div class="moddescr">I ragazzi del diario da anni raccontano la loro quotidianità. Paolo ha iniziato 4 anni fa e man mano si sono aggiunti conduttori, oggi il diario delle schiappe vanta ben cinque conduttori, Margherita, Riccardo, Giulia e Fra. Tutti i mercoledì si raccontano. Sempre pronti a dire la loro.</div>
     </div>
 
+    <!--
     <div class="progmod">
         <div class="modid">tbg</div>
         <div class="modtitolo">Il Salotto del TBG</div>
         <div class="modimm">assets/img/static/locandine/tbg.jpg</div>
         <div class="moddescr">Il salotto del TBG è, come dice la parola stessa, una chiacchierata fra amici. Un salotto radiofonico ed a tratti surreale, nel quale Marco e Andrea di <a href="https://www.youtube.com/channel/UCbQpyC195Z_roSCkLenf5NQ">Total Board Game</a>  portano in onda un po' del mondo dei boardgames, spesso accompagnati da diversi ospiti a sorpresa pescati dagli eventi del vicino Punto Zero. Questo, unito ad una forte ironia e una grande dose di sana improvvisazione, permette ad ogni puntata di partire da giochi da tavolo e da tematiche specifiche, per poi evolversi fino a prendere pieghe inaspettate ed imprevedibili. Si arrivano a toccare così gli argomenti più disparati e spesso molto lontani da quelli di partenza, grazie anche ai vari interessi del duo. Insomma sono tutte chiacchiere... ma in senso positivo!</div>
     </div>
+    -->
 
     <div class="progmod">
         <div class="modid">poetilici</div>
