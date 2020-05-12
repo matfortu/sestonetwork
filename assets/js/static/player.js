@@ -22,6 +22,7 @@ function NowPlaying(){
             $("#titolo").text(titoloCorrente);
         }
     });
+    setMetadata(titoloNuovo);
 };
 
 function getAlbumArt(titolo){
@@ -35,9 +36,11 @@ function getAlbumArt(titolo){
         success: function(data){
             if(data.immagine["#text"] == '') {
                 $( "#cover" ).attr( "src", "assets/img/static/disc.png" );
+                setMetadata(dati[0], dati[1], "assets/img/static/disc.png");
             }
             else {
                 $( "#cover" ).attr( "src", data.immagine["#text"]);
+                setMetadata(dati[0], dati[1], data.immagine["#text"]);
             }
         },
         failure: function(errMsg) {
@@ -49,7 +52,7 @@ function getAlbumArt(titolo){
 
 function playPausa() {
 
-    if(flag) {
+	if(flag) {
     	$("#playpausa").removeClass("fa-pause-circle").addClass("fa-play-circle");
     	audio.pause();
     	flag = false;
@@ -60,6 +63,19 @@ function playPausa() {
 		flag = true;
 	}
 };
+
+function setMetadata(artista, brano, immagine) {
+	if ("mediaSession" in navigator) {
+		navigator.mediaSession.metadata = new MediaMetadata({
+		    title: brano,
+		    artist: artista,
+		    artwork: [
+		      { src: immagine, sizes: '256x256', type: 'image/png' },
+		      { src: immagine, sizes: '512x512', type: 'image/png' },
+		    ]
+		  });
+	}
+}
 
 function SetVolume(val) {
     audio.volume = val / 100;
