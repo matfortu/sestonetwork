@@ -80,9 +80,11 @@ app.post('/albumart', async (req, res) => {
     try {
         const info = await lastfm.getInfo(artist, track)
         const immagine = info.data.track.album.image[3]
+        const album = info.data.track.album.title
 
         return res.json({
-            immagine
+            immagine,
+            album
         })
 
     } catch(e) {
