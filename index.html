@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="assets/css/static/style.css">
 </head>
 
-<body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" alt="SestoNetwork" src="assets/img/static/logo.png" style="margin: 0px;margin-top: 30px;max-width: 20%;">
+<body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" alt="SestoNetwork" src="assets/img/static/logo.png">
 	<div class="container" style="width: 600px;max-width: 100%;margin-bottom: 1%;">
 		<audio id="audio" volume="0.3">
 			<source src="https://sestonetwork.cloud:8002//;stream.mp3" type="audio/mpeg">
 		</audio>
-		<i class="fa fa-video-camera" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i>
-		<i id="playpausa" class="fa fa-play-circle" style="font-size: 70px;padding-right: 15px;padding-left: 15px;padding-top: 15px;" onclick="playPausa();"></i>
-		<i onclick="condividi();" class="fa fa-share-alt" id="share" style="font-size: 45px;padding-left: 15px;"></i>
+		<i class="fa fa-video-camera topControls" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i>
+		<i id="playpausa" class="fa fa-play-circle topControls" style="font-size: 70px;padding-right: 15px;padding-left: 15px;padding-top: 15px;" onclick="playPausa();"></i>
+		<i onclick="condividi();" class="fa fa-share-alt topControls" id="share" style="font-size: 45px;padding-left: 15px;"></i>
 	</div>
-	<div class="container" style="width: 300px;max-width: 100%;">
+	<div id="barraVolume" class="container" style="width: 300px;max-width: 100%;">
 		<div class="row">
             <div class="col">
 				<i class="fa fa-volume-down" style="font-size: 20px;"></i>
@@ -270,47 +270,82 @@
         <div id="collapse-5" class="collapse" style="max-width: auto;" data-parent="#contenuto">
             <h1 style="font-family: Amiko, sans-serif;padding-top: 15px;">Repliche</h1>
             <hr class="linea" style="margin-top: 0px;margin-bottom: -8px;">
-            <ol class="breadcrumb justify-content-center" style="font-family: Amiko, sans-serif;font-size: 11px;margin-bottom: 0px;background-color: transparent;">
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="0">Lunedì</span></a></li>
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="1">Martedì</span></a></li>
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="2">Mercoledì</span></a></li>
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="3">Giovedì</span></a></li>
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="4">Venerdì</span></a></li>
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="5">Sabato</span></a></li>
-                <li class="breadcrumb-item"><a href="#"><span data-target="#carousel-2" data-slide-to="6">Domenica</span></a></li>
-            </ol>
-            <div class="carousel slide" data-ride="carousel" data-interval="false" id="carousel-2">
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active" id="lunedi-r">
-                        <h3 class="text-danger giorno">Lunedì</h3>
-                        
-                    </div>
-                    <div class="carousel-item" id="martedi-r">
-                        <h3 class="text-danger giorno">Martedì</h3>
-                        
-                    </div>
-                    <div class="carousel-item" id="mercoledi-r">
-                        <h3 class="text-danger giorno">Mercoledì</h3>
-                        
-                    </div>
-                    <div class="carousel-item" id="giovedi-r">
-                    	<h3 class="text-danger giorno">Giovedì</h3>
-                    	
-                    </div>
-                    <div class="carousel-item" id="venerdi-r">
-                        <h3 class="text-danger giorno">Venerdì</h3>
-                    	
-                    </div>
-                    <div class="carousel-item" id="sabato-r">
-                        <h3 class="text-danger giorno">Sabato</h3>
-                    </div>
-                    <div class="carousel-item" id="domenica-r">
-                        <h3 class="text-danger giorno">Domenica</h3>
-                        
-                    </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMhTpUIvwKd-KJlV8PtN7Im2" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/arthropoda.jpg" loading="lazy">
+                    </a>
                 </div>
-                <div><a class="carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-2" role="button"
-                        data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMj9IEcTjNg6srbhp7zY8fW2" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/clublibro.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMhSm6oENAwe4glXRJhY7zB6" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/fracasso.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://karesansuiart.wordpress.com/podcasts/" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/karesansui.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMi-ezotT4kXINPImfuwy421" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/mazzate.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMg-GXPC4nfrDzE5qehvsUE0" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/notturno.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/prof.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/rainbow.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/schiappe.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMhPan3qUOBe9KFafVnHyp-C" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/science.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMjkQH_l0ZkYmjr-g0wrmvQL" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/talknshoot.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMgwDZYKOHaFHLYiZJrZKgCM" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/biblio.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMhSIxWhp2ZyVk_v-uaGhmaN" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/brioches.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/vanessa.jpg" loading="lazy">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.youtube.com/playlist?list=PLSiNIkvkqjMhQbck7jMTmnwxvw_fk3xsQ" target="_blank">
+                        <img class="img-fluid img-thumbnail replica" style="margin-bottom: 4%;" src="assets/img/static/locandine/vnm.jpg" loading="lazy">
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -416,7 +451,7 @@
         <div class="modid">karesansui</div>
         <div class="modtitolo">Karesansui</div>
         <div class="modimm">assets/img/static/locandine/karesansui.jpg</div>
-        <div class="moddescr">In questa società che ha fatto dell’indifferenza un metodo, e dell’ignoranza una virtù, c’è uno spazio di cultura indipendente, armoniosa, emozionante. Uno spazio antropologico, storico, geografico, per chi di voi desidera informazione senza dimenticare musica e poesia.<br><br>I Podcast delle puntate precedenti sono disponibili all’indirizzo: <a href="https://karesansuiart.wordpress.com/podcasts" target="_blank">karesansuiart.wordpress.com/podcasts</a></div>
+        <div class="moddescr">In questa società che ha fatto dell’indifferenza un metodo, e dell’ignoranza una virtù, c’è uno spazio di cultura indipendente, armoniosa, emozionante. Uno spazio antropologico, storico, geografico, per chi di voi desidera informazione senza dimenticare musica e poesia.</div>
     </div>
 
     <div class="progmod">
@@ -449,7 +484,7 @@
 
     <div class="progmod">
         <div class="modid">vnm</div>
-        <div class="modtitolo">Vita Natural Metropolitana</div>
+        <div class="modtitolo">Collezione di Pozzanghere</div>
         <div class="modimm">assets/img/static/locandine/vnm.jpg</div>
         <div class="moddescr">La Ro e La Lo, chiaccherando a 360 gradi del mondo Olos, raccontano il loro viaggio, la loro avventura, l'esperienza negli anni della loro Amicizia alla scoperta e RI-scoperta di saperi antichi e nuovi, rimedi naturali, ricette, consigli della nonna, aggiornamenti OMS, leggende, racconti. Argomenti attuali trattati in modo scanzonato sempre e solo in versione GREEN. Perché una Vita Natural Metropolitana si PUÒ!</div>
     </div>
@@ -459,6 +494,20 @@
         <div class="modtitolo">BiblioBoom</div>
         <div class="modimm">assets/img/static/locandine/biblio.jpg</div>
         <div class="moddescr">A BiblioBoom presenteremo libri, cd musicali, dvd, servizi che offrono le biblioteche, il tutto arricchito dalla presenza di tantissimi ospiti!</div>
+    </div>
+
+    <div class="row">
+        <div class="col social">
+            <a href="https://www.facebook.com/SestoNetwork/" target="_blank" id="facebook">
+                <i class="fa fa-facebook iconeSocial"></i>
+            </a>
+            <a href="https://www.instagram.com/sestonetwork/" target="_blank" id="instagram">
+                <i class="fa fa-instagram iconeSocial"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCN-vLNltyt0czivTE3z-zDQ" target="_blank" id="youtube">
+                <i class="fa fa-youtube iconeSocial"></i>
+            </a>
+        </div>
     </div>
 
     <footer style="font-family: Amiko, sans-serif; font-size: 11px; margin-top: 2%;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>

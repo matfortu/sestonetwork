@@ -31,6 +31,7 @@ function condividi(){
     }
 };
 
+
 function inOnda(){
     switch(day.getDay()) {
         case 0:
@@ -61,7 +62,7 @@ function inOnda(){
                 inonda = "Logiche e Brioches";
             }
             else if(time >= 1500 && time <= 1600) {
-                inonda = "Vita Natural Metropolitana";
+                inonda = "Collezione di Pozzanghere";
             }
             /*
             else if(time >= 2100 && time <= 2200) {
