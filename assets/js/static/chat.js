@@ -52,6 +52,7 @@ $(function () {
     	scrollaInBasso();
   	});
 
+  	/*
   	$(document).ready(function() {
     	socket.emit('update_title');
 	});
@@ -59,4 +60,5 @@ $(function () {
   	setInterval(function(){
     	socket.emit('update_title');
 	}, 1000);
+	*/
 });
