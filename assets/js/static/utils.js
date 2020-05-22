@@ -64,11 +64,9 @@ function inOnda(){
             else if(time >= 1500 && time <= 1600) {
                 inonda = "Collezione di Pozzanghere";
             }
-            /*
-            else if(time >= 2100 && time <= 2200) {
-                inonda = "Il Salotto del TBG";
+            else if(time >= 1830 && time <= 1930) {
+                inonda = "A Tutto Yoga";
             }
-            */
             break;
         case 4:
         	if(time >= 1030 && time <= 1130) {
