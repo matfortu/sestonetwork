@@ -5,6 +5,7 @@ const titolo = require('http');
 const io = require('socket.io')(http);
 const lastfm = require('./assets/app/lastfm')
 const axios = require("axios");
+const shrinkRay = require('shrink-ray-current');
 var utenti = [];
 
 require('dotenv').config();
@@ -12,6 +13,8 @@ require('dotenv').config();
 app.use(express.json());
 
 app.use('/assets', express.static(__dirname +'/assets'));
+
+app.use(shrinkRay());
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/index.html');
