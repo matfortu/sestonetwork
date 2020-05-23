@@ -71,12 +71,16 @@ function playPausa() {
 
 function setMetadata(artista, brano, immagine, disco, tipo) {
 	if ("mediaSession" in navigator) {
-		navigator.mediaSession.metadata = new MediaMetadata({
-		    title: brano,
-		    artist: artista,
-		    album: disco,
-		    artwork: [{ src: immagine, sizes: "300x300", type: tipo}]
-		});
+		try {
+			navigator.mediaSession.metadata = new MediaMetadata({
+			    title: brano,
+			    artist: artista,
+			    album: disco,
+			    artwork: [{ src: immagine, sizes: "300x300", type: tipo}]
+			});
+		}
+		catch(err) {
+		}
 	}
 }
 
