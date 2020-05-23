@@ -20,6 +20,10 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/sw.js', function(req, res){
+	res.sendFile(__dirname + '/sw.js');
+});
+
 app.get('*', function(req, res){
 	res.status(404).sendFile(__dirname + '/notfound.html');
 });

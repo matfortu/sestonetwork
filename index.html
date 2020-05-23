@@ -7,6 +7,7 @@
     <meta name="Description" content="SestoNetwork - La WebRadio di Sesto San Giovanni">
     <title>SestoNetwork</title>
     <link rel="icon" href="assets/img/static/favicon.ico" />
+    <link rel="manifest" href="assets/app/manifest.json">
     <link rel="apple-touch-icon" href="assets/img/static/logo_apple.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
@@ -14,14 +15,18 @@
     <link rel="stylesheet" href="assets/css/static/style.css">
 </head>
 
-<body class="text-center" style="background-color: #e8e8e8;"><img class="img-fluid" id="logo" alt="SestoNetwork" src="assets/img/static/logo.png">
+<body class="text-center" style="background-color: #e8e8e8;">
+    <div class="container" style="max-width: 100%;">
+    <img class="img-fluid" id="logo" alt="SestoNetwork" src="assets/img/static/logo.png">
 	<div class="container" style="width: 600px;max-width: 100%;margin-bottom: 1%;">
-		<audio id="audio" volume="0.3">
+		<audio id="audio" volume="0.5">
 			<source src="https://sestonetwork.cloud:8002//;stream.mp3" type="audio/mpeg">
 		</audio>
-		<i class="fa fa-video-camera topControls" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i>
-		<i id="playpausa" class="fa fa-play-circle topControls" style="font-size: 70px;padding-right: 15px;padding-left: 15px;padding-top: 15px;" onclick="playPausa();"></i>
-		<i onclick="condividi();" class="fa fa-share-alt topControls" id="share" style="font-size: 45px;padding-left: 15px;"></i>
+        <div id="controlli">
+    		<i class="fa fa-video-camera topControls" style="font-size: 45px;padding-right: 15px;" onclick="checkVideo();"></i>
+    		<i id="playpausa" class="fa fa-play-circle topControls" style="font-size: 70px;padding-right: 15px;padding-left: 15px;padding-top: 15px;" onclick="playPausa();"></i>
+    		<i onclick="condividi();" class="fa fa-share-alt topControls" id="share" style="font-size: 45px;padding-left: 15px;"></i>
+        </div>
 	</div>
 	<div id="barraVolume" class="container" style="width: 300px;max-width: 100%;">
 		<div class="row">
@@ -522,7 +527,17 @@
         </div>
     </div>
 
-    <footer style="font-family: Amiko, sans-serif; font-size: 11px; margin-top: 2%;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
+    <footer id="footer" style="font-family: Amiko, sans-serif; font-size: 10px; margin-top: 3%;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
+    </div>
+
+    <script type="text/javascript">
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then(function() { console.log("Service Worker Registered"); });
+        }
+    </script>
+    
     <script src="assets/js/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

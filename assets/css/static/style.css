@@ -23,8 +23,8 @@ a:hover {
 
 @media only screen and (max-width: 730px) {
   #logo {
-    max-width: 55%!important;
     margin-bottom: 2%;
+    margin-top: 3%;
   }
   .carousel-control-prev-icon {
     display: none;
@@ -42,6 +42,15 @@ a:hover {
   .iconeSocial {
     margin-left: 3%!important;
     margin-right: 3%!important;
+  }
+
+  #controlli {
+    transform: scale(0.8);
+  }
+
+  .d-inline-block {
+    height: 35px!important;
+    width: 150px;
   }
 }
 
@@ -98,8 +107,10 @@ a:hover {
 
 #logo {
   margin: 0px;
-  margin-top: 30px;
-  max-width: 15%;
+  margin-top: 2%;
+  width: 15%;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 #playpausa {
@@ -139,7 +150,7 @@ a:hover {
 
 #cover {
   box-shadow: 5px 5px 7px -1px #b3b3b3;
-  max-width: 150px;
+  max-width: 130px;
 }
 
 .round-btn {
