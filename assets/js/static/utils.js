@@ -37,10 +37,7 @@ function inOnda(){
         case 0:
             break;
         case 1:
-        	if(time >= 0000 && time <= 0100) {
-                inonda = "Black-Xtasy";
-            }
-        	else if(time >= 1030 && time <= 1100) {
+        	if(time >= 1030 && time <= 1100) {
                 inonda = "Logiche e Brioches";
             }
             else if(time >= 2000 && time <= 2100) {
