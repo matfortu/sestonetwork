@@ -6,11 +6,14 @@ const io = require('socket.io')(http);
 const lastfm = require('./assets/app/lastfm')
 const axios = require("axios");
 var compression = require('compression')
+var helmet = require('helmet')
 var utenti = [];
 
 require('dotenv').config();
 
 app.use(compression());
+
+app.use(helmet());
 
 app.use(express.json());
 
@@ -66,8 +69,8 @@ io.on('connection', function(socket) {
 app.post('/title', async (req, res) => {
 
 	try {
-		const tt = await axios.get('http://sestonetwork.cloud:3012/currentsong?sid=1')
-		const titolo = tt.data
+		const tt = await axios.get('https://stream.sestonetwork.cloud:3012/status-json.xsl')
+		const titolo = tt.data.icestats.source.title
 
         return res.json({
             titolo
