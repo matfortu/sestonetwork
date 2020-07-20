@@ -7,11 +7,12 @@ const lastfm = require('./assets/app/lastfm')
 const axios = require("axios");
 var compression = require('compression')
 var helmet = require('helmet')
+const nocache = require('nocache')
 var utenti = [];
 
-require('dotenv').config();
-
 app.use(compression());
+
+app.use(nocache());
 
 app.use(helmet());
 
@@ -23,8 +24,8 @@ app.get('/', function(req, res){
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/sw.js', function(req, res){
-	res.sendFile(__dirname + '/sw.js');
+app.get('/pwabuilder-sw.js', function(req, res){
+	res.sendFile(__dirname + '/pwabuilder-sw.js');
 });
 
 app.get('*', function(req, res){

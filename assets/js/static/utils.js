@@ -64,6 +64,9 @@ function inOnda(){
             else if(time >= 1830 && time <= 1930) {
                 inonda = "A Tutto Yoga";
             }
+            else if(time >= 2100 && time <= 2200) {
+                inonda = "Notturno Poetilico";
+            }
             break;
         case 4:
         	if(time >= 1030 && time <= 1130) {
@@ -86,17 +89,18 @@ function inOnda(){
             else if(time >= 1030 && time <= 1130) {
                 inonda = "BiblioBoom";
             }
-            else if(time >= 1900 && time <= 2000) {
-                inonda = "Mazzate...e basta!";
-            }
+            
             else if(time >= 2000 && time <= 2100) {
                 inonda = "Science Shots";
             }
-            else if(time >= 2100 && time <= 2200) {
-                inonda = "Notturno Poetilico";
-            }
             break;
         case 6:
+            if(time >= 1130 && time <= 1230) {
+                inonda = "Mazzate...e basta!";
+            }
+            else if(time >= 2000 && time <= 2100) {
+                inonda = "Mazzate...e basta!";
+            }
             break;
     }
 

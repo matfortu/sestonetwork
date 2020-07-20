@@ -186,6 +186,12 @@
                             <div class="nome">A Tutto Yoga</div>
                             <div class="conduttore">Paola Campese & Manuel Mauri</div>
                         </div>
+                        <div class="row prog">
+                            <div class="ora">21:00</div>
+                            <div class="modale">poetilici</div>
+                            <div class="nome">Notturno Poetilico</div>
+                            <div class="conduttore">Jack, Marco, Zoe, Adriano, Nour & Marina</div>
+                        </div>
                     </div>
                     <div class="carousel-item" id="giovedi">
                     	<h3 class="text-danger giorno">Giovedì</h3>
@@ -233,12 +239,6 @@
                             <div class="modale">science</div>
                             <div class="nome">Science Shots</div>
                             <div class="conduttore">Jacopo & Ilaria</div>
-                        </div>
-                        <div class="row prog">
-                            <div class="ora">21:00</div>
-                            <div class="modale">poetilici</div>
-                            <div class="nome">Notturno Poetilico</div>
-                            <div class="conduttore">Jack, Marco, Zoe, Adriano, Nour & Marina</div>
                         </div>
                     </div>
                     <div class="carousel-item" id="sabato">
@@ -516,13 +516,18 @@
     <footer id="footer" style="font-family: Amiko, sans-serif; font-size: 10px; margin-top: 3%;">© 2015-2020 SestoNetwork - Licenza SIAE n. 5630/I/5368 - Licenza SCF n. 269/17</footer>
     </div>
 
-    <script type="text/javascript">
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
+    <!--<script type="text/javascript">
         if('serviceWorker' in navigator) {
             navigator.serviceWorker
                 .register('sw.js')
                 .then(function() { console.log("Service Worker Registered"); });
         }
-    </script>
+    </script>-->
     
     <script src="assets/js/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
