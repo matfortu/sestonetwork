@@ -28,6 +28,10 @@ app.get('/pwabuilder-sw.js', function(req, res){
 	res.sendFile(__dirname + '/pwabuilder-sw.js');
 });
 
+app.get('/offline.html', function(req, res){
+	res.sendFile(__dirname + '/offline.html');
+});
+
 app.get('*', function(req, res){
 	res.status(404).sendFile(__dirname + '/notfound.html');
 });

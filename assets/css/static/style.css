@@ -52,6 +52,9 @@ a:hover {
     height: 35px!important;
     width: 150px;
   }
+  #contenuto {
+    width:100%!important;
+  }
 }
 
 @media only screen and (max-width: 800px) {
