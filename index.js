@@ -10,11 +10,12 @@ var helmet = require('helmet')
 const nocache = require('nocache')
 var utenti = [];
 
+
 app.use(compression());
 
 app.use(nocache());
 
-app.use(helmet());
+//app.use(helmet());
 
 app.use(express.json());
 

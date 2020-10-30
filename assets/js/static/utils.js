@@ -51,7 +51,7 @@ function inOnda(){
             break;
         case 2:
         	if(time >= 1030 && time < 1130) {
-                inonda = "BiblioBoom";
+                inonda = "Buongiorno, Vanessa!";
             }
             break;
         case 3:
